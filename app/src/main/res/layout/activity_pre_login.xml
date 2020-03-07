@@ -51,6 +51,7 @@
                 android:layout_weight="1">
 
                 <LinearLayout
+                    android:id="@+id/lyPaciente"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -84,6 +85,7 @@
                 android:layout_weight="1">
 
                 <LinearLayout
+                    android:id="@+id/lyMedico"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -102,7 +104,6 @@
                         android:fontFamily="@font/roboto_light"
                         android:textColor="@color/colorPrimary"
                         android:layout_marginTop="10dp"/>
-
 
                 </LinearLayout>
 
