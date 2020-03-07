@@ -6,4 +6,34 @@
     android:layout_height="match_parent"
     tools:context="com.example.MedicoLogin">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary2">
+
+        <LinearLayout
+            android:id="@+id/topLy"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:background="@color/colorPrimary2">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/topLy"
+            android:background="@drawable/bg_lybottonlogin">
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
