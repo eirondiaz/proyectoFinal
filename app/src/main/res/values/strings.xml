@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">proyectoFinal</string>
+    <string name="bienvenidos">Bienvenidos</string>
+    <string name="tipo_usuario">Elige el tipo de usuario:</string>
+    <string name="paciente">Paciente</string>
+    <string name="medico">Medico</string>
+</resources>
