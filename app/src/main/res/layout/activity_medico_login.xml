@@ -26,6 +26,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center_horizontal"
+            android:padding="20dp"
             android:layout_below="@id/topLy"
             android:background="@drawable/bg_lybottonlogin">
 
