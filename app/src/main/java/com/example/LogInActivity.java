@@ -12,7 +12,7 @@ import com.example.proyectofinal.MainActivity;
 import com.example.proyectofinal.PreLogin;
 import com.example.proyectofinal.R;
 
-public class PacienteLogin extends AppCompatActivity implements View.OnClickListener {
+public class LogInActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView imgBack;
     private Button btnLogIn, btnRegistro;
@@ -37,13 +37,13 @@ public class PacienteLogin extends AppCompatActivity implements View.OnClickList
         switch (v.getId()){
 
             case R.id.imgBack:
-                startActivity(new Intent(PacienteLogin.this, PreLogin.class));
+                startActivity(new Intent(LogInActivity.this, PreLogin.class));
                 break;
             case R.id.btnLogIn:
                 //AQUI VA EL CODIGO DEL EVENTO DEL BOTON DE INICIAR SESION
                 break;
             case R.id.btnRegistro:
-                startActivity(new Intent(PacienteLogin.this, MainActivity.class));
+                startActivity(new Intent(LogInActivity.this, RegistroPaciente.class));
                 break;
         }
     }

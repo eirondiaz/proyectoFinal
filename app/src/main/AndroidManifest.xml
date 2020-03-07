@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.example.RegistroPaciente"></activity>
-        <activity android:name="com.example.PacienteLogin" />
+        <activity android:name="com.example.LogInActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".PreLogin">
             <intent-filter>
