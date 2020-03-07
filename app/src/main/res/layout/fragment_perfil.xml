@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fff">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,7 +45,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="20dp">
+                android:padding="14dp">
 
                 <ImageView
                     android:layout_width="170dp"
@@ -66,6 +67,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     app:cardCornerRadius="15dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
                     android:layout_marginTop="50dp">
 
                     <LinearLayout
@@ -74,6 +77,27 @@
                         android:orientation="horizontal"
                         android:gravity="center_vertical">
 
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="17dp"
+                            android:src="@drawable/ic_assignment_black_24dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Historial de citas"
+                            android:textSize="20sp"
+                            android:layout_marginLeft="20dp"
+                            android:textColor="@color/colorPrimary2"
+                            android:fontFamily="@font/roboto_light"/>
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="100dp"
+                            android:src="@drawable/ic_chevron_right_black_24dp"/>
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -82,6 +106,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     app:cardCornerRadius="15dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
                     android:layout_marginTop="10dp">
 
                     <LinearLayout
@@ -89,6 +115,14 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
                         android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Información personal"
+                            android:textSize="20sp"
+                            android:textColor="@color/colorPrimary2"
+                            android:fontFamily="@font/roboto_light"/>
 
                     </LinearLayout>
 
@@ -98,6 +132,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     app:cardCornerRadius="15dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
                     android:layout_marginTop="10dp">
 
                     <LinearLayout
@@ -105,6 +141,14 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
                         android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cambiar contraseña"
+                            android:textSize="20sp"
+                            android:textColor="@color/colorPrimary2"
+                            android:fontFamily="@font/roboto_light"/>
 
                     </LinearLayout>
 

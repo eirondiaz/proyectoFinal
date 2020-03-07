@@ -14,7 +14,7 @@
         <LinearLayout
             android:id="@+id/topLy"
             android:layout_width="match_parent"
-            android:layout_height="210dp"
+            android:layout_height="200dp"
             android:orientation="vertical"
             android:background="@color/colorPrimary2">
 
@@ -25,6 +25,17 @@
                 android:src="@drawable/ic_chevron_left_black_24dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Iniciar Sesión"
+                android:textColor="#fff"
+                android:fontFamily="@font/roboto_light"
+                android:textStyle="bold"
+                android:textSize="40sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"/>
 
         </LinearLayout>
 
