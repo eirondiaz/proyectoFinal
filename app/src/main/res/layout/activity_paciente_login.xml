@@ -39,7 +39,7 @@
 
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/edEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -51,7 +51,7 @@
                 android:padding="12dp"/>
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/edContraseña"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
