@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.proyectofinal.MainActivity;
 import com.example.proyectofinal.PreLogin;
 import com.example.proyectofinal.R;
 
@@ -42,7 +43,7 @@ public class PacienteLogin extends AppCompatActivity implements View.OnClickList
                 //AQUI VA EL CODIGO DEL EVENTO DEL BOTON DE INICIAR SESION
                 break;
             case R.id.btnRegistro:
-                //AQUI VA EL CODIGO DEL EVENTO DEL BOTON DE REGISTRO
+                startActivity(new Intent(PacienteLogin.this, MainActivity.class));
                 break;
         }
     }

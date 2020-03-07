@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     tools:context=".MainActivity">
 
     <RelativeLayout
@@ -22,6 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             app:menu="@menu/menu_items"
+            app:backgroundTint="#FFF"
             android:background="?android:attr/windowBackground"/>
 
     </RelativeLayout>
