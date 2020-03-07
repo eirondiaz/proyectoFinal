@@ -22,8 +22,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paciente_login);
 
-        imgBack = findViewById(R.id.imgBack);
-        imgBack.setOnClickListener(this);
+        imgBack = findViewById(R.id.imgBack   );
+        imgBack.setOnClickListener(this  );
 
         btnLogIn = findViewById(R.id.btnLogIn);
         btnLogIn.setOnClickListener(this);
