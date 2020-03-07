@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.MedicoLogin"></activity>
+        <activity android:name="com.example.RegistroPaciente"></activity>
         <activity android:name="com.example.PacienteLogin" />
         <activity android:name=".MainActivity" />
         <activity android:name=".PreLogin">

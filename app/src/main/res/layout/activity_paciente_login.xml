@@ -77,6 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Olvidaste tu constraseña?"
+                android:textColor="@color/colorPrimary2"
                 android:layout_marginTop="7dp"
                 android:textSize="17sp"
                 android:layout_gravity="end"/>
@@ -90,13 +91,13 @@
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary2"
                 android:background="@drawable/bg_btnregistro"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="40dp"/>
 
             <Button
                 android:id="@+id/btnRegistro"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:text="Registrate aquí"
+                android:text="Registrate"
                 android:fontFamily="@font/roboto"
                 android:textStyle="bold"
                 android:textColor="#fff"
