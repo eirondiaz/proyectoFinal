@@ -72,9 +72,10 @@
                     app:cardCornerRadius="15dp"
                     android:layout_marginLeft="3dp"
                     android:layout_marginRight="3dp"
-                    android:layout_marginTop="70dp">
+                    android:layout_marginTop="55dp">
 
                     <LinearLayout
+                        android:id="@+id/lyHistCitas"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
@@ -114,6 +115,7 @@
                     android:layout_marginTop="15dp">
 
                     <LinearLayout
+                        android:id="@+id/lyInfPer"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
@@ -154,6 +156,7 @@
                     android:layout_marginBottom="4dp">
 
                     <LinearLayout
+                        android:id="@+id/lyCamContra"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"

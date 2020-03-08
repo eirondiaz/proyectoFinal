@@ -40,7 +40,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(new Intent(LogInActivity.this, PreLogin.class));
                 break;
             case R.id.btnLogIn:
-                //AQUI VA EL CODIGO DEL EVENTO DEL BOTON DE INICIAR SESION
+                startActivity(new Intent(LogInActivity.this, MainActivity.class));
                 break;
             case R.id.btnRegistro:
                 startActivity(new Intent(LogInActivity.this, RegistroPaciente.class));
