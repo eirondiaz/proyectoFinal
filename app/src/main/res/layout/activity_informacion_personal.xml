@@ -5,6 +5,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.InformacionPersonal">
+    tools:context="com.example.InformacionPersonal"
+    android:background="#fff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:orientation="vertical"
+            android:background="@color/colorPrimary2"
+            android:gravity="center_vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_account_circle_black_24dp22"/>
+
+                <Button
+                    android:id="@+id/btnEditar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="editar"
+                    android:fontFamily="@font/roboto_light"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimary2"
+                    android:textAllCaps="true"
+                    android:background="@drawable/bg_btneditar"
+                    android:layout_marginLeft="160dp"
+                    android:drawableLeft="@drawable/ic_edit_black_24dp"
+                    android:drawablePadding="10dp"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="18dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eiron Diaz"
+                android:fontFamily="@font/roboto_light"
+                android:textColor="#fff"
+                android:textSize="25sp"/>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal">
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnLogOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cerrar Sesión"
+            android:textColor="#fff"
+            android:background="@drawable/bg_btneditar"
+            android:backgroundTint="#ff0000"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

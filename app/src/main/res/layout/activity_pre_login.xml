@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PreLogin"
-    android:background="@color/backGround_color">
+    android:background="#fff">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/roboto"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorPrimary2"
             android:text="@string/bienvenidos"
             android:textAllCaps="true"
             android:textSize="35sp"
@@ -33,9 +33,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="100dp"
             android:fontFamily="@font/roboto_light"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorPrimary2"
             android:text="@string/tipo_usuario"
             android:textAllCaps="true"
             android:textSize="18sp" />
@@ -73,7 +73,7 @@
                         android:text="@string/paciente"
                         android:textSize="20sp"
                         android:fontFamily="@font/roboto_light"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorPrimary2"
                         android:layout_marginTop="10dp"/>
 
                 </LinearLayout>
@@ -107,7 +107,7 @@
                         android:text="@string/medico"
                         android:textSize="20sp"
                         android:fontFamily="@font/roboto_light"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorPrimary2"
                         android:layout_marginTop="10dp"/>
 
                 </LinearLayout>

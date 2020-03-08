@@ -31,23 +31,69 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="150dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="15dp"
                     android:layout_marginBottom="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:src="@drawable/agendar_127px"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="agendar cita"
+                            android:textAllCaps="true"
+                            android:textSize="17sp"
+                            android:fontFamily="@font/roboto_light"
+                            android:textColor="@color/colorPrimary2"
+                            android:layout_marginTop="10dp"/>
+
+                    </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="150dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="30dp"
                     android:layout_marginBottom="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:src="@drawable/treatment_plan_127px"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="citas agendadas"
+                            android:textAllCaps="true"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/roboto_light"
+                            android:textColor="@color/colorPrimary2"
+                            android:layout_marginTop="10dp"/>
+
+                    </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
@@ -61,23 +107,69 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="150dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="15dp"
                     android:layout_marginBottom="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:src="@drawable/health_checkup_127px"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="texto 3"
+                            android:textAllCaps="true"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/roboto_light"
+                            android:textColor="@color/colorPrimary2"
+                            android:layout_marginTop="10dp"/>
+
+                    </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="150dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="30dp"
                     android:layout_marginBottom="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:src="@drawable/info_127px"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Acerca de..."
+                            android:textAllCaps="true"
+                            android:textSize="17sp"
+                            android:fontFamily="@font/roboto_light"
+                            android:textColor="@color/colorPrimary2"
+                            android:layout_marginTop="10dp"/>
+
+                    </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
