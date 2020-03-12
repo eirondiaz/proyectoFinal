@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
-            android:background="@color/colorPrimary2"
+            android:background="@drawable/bg_gradientepink"
             android:gravity="center_vertical">
 
             <TextView

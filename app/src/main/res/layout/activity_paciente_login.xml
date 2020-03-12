@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.LogInActivity">
+    tools:context="com.example.PacienteLogin">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary2">
+        android:background="@drawable/bg_gradientepink">
 
         <LinearLayout
             android:id="@+id/topLy"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:orientation="vertical"
-            android:background="@color/colorPrimary2">
+            android:background="@drawable/bg_gradientepink">
 
             <ImageView
                 android:id="@+id/imgBack"

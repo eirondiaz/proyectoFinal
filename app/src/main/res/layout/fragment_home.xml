@@ -12,9 +12,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="280dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:background="@drawable/bg_dashboard"
-            android:gravity="center_vertical">
+            android:padding="30dp">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_account_circle_black_24dp22"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hi, Eiron"
+                android:textColor="#fff"
+                android:fontFamily="@font/roboto_light"
+                android:textSize="27sp"/>
 
         </LinearLayout>
 

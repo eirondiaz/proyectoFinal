@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.example.LogInActivity;
+import com.example.PacienteLogin;
 
 public class PreLogin extends AppCompatActivity implements View.OnClickListener {
 
@@ -30,10 +30,10 @@ public class PreLogin extends AppCompatActivity implements View.OnClickListener 
         switch (v.getId()){
 
             case R.id.lyPaciente:
-                startActivity(new Intent(PreLogin.this, LogInActivity.class));
+                startActivity(new Intent(PreLogin.this, PacienteLogin.class));
                 break;
             case R.id.lyMedico:
-                startActivity(new Intent(PreLogin.this, LogInActivity.class));
+                startActivity(new Intent(PreLogin.this, PacienteLogin.class));
                 break;
         }
     }
