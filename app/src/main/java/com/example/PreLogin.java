@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.example.SeccionMedico.MedicoLogin;
 import com.example.SeccionPaciente.PacienteLogin;
 import com.example.proyectofinal.R;
 
