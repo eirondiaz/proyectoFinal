@@ -1,4 +1,4 @@
-package com.example;
+package com.example.SeccionPaciente;
 
 import android.os.Bundle;
 
@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.proyectofinal.R;
 
-public class HistorialCitas extends AppCompatActivity {
+public class CambiarContrasena extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_historial_citas);
+        setContentView(R.layout.activity_cambiar_contrasena);
     }
 }

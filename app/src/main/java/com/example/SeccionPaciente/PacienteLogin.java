@@ -1,4 +1,4 @@
-package com.example;
+package com.example.SeccionPaciente;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.proyectofinal.MainActivity;
-import com.example.proyectofinal.PreLogin;
+import com.example.MainActivity;
+import com.example.PreLogin;
 import com.example.proyectofinal.R;
 
 public class PacienteLogin extends AppCompatActivity implements View.OnClickListener {

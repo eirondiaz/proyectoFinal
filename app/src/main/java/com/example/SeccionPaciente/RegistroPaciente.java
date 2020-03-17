@@ -1,4 +1,4 @@
-package com.example;
+package com.example.SeccionPaciente;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;

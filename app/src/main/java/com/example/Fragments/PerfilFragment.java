@@ -11,9 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.CambiarContrasena;
-import com.example.HistorialCitas;
-import com.example.InformacionPersonal;
+import com.example.SeccionPaciente.CambiarContrasena;
+import com.example.SeccionPaciente.HistorialCitas;
+import com.example.SeccionPaciente.InformacionPersonal;
 import com.example.proyectofinal.R;
 
 public class PerfilFragment extends Fragment implements View.OnClickListener {

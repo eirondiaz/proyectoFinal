@@ -1,4 +1,4 @@
-package com.example.proyectofinal;
+package com.example;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.example.PacienteLogin;
+import com.example.SeccionMedico.MedicoLogin;
+import com.example.SeccionPaciente.PacienteLogin;
+import com.example.proyectofinal.R;
 
 public class PreLogin extends AppCompatActivity implements View.OnClickListener {
 
@@ -33,7 +35,7 @@ public class PreLogin extends AppCompatActivity implements View.OnClickListener 
                 startActivity(new Intent(PreLogin.this, PacienteLogin.class));
                 break;
             case R.id.lyMedico:
-                startActivity(new Intent(PreLogin.this, PacienteLogin.class));
+                startActivity(new Intent(PreLogin.this, MedicoLogin.class));
                 break;
         }
     }
