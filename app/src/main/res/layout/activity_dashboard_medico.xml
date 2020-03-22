@@ -6,4 +6,25 @@
     android:layout_height="match_parent"
     tools:context="com.example.SeccionMedico.DashboardMedico">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/fragm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom_navbar2"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navbar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/menu_items"
+            app:backgroundTint="#FFF"
+            android:background="?android:attr/windowBackground"/>
+
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

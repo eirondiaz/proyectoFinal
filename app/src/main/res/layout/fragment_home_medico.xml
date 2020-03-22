@@ -26,7 +26,7 @@
                 android:id="@+id/tvNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="Hi, Eiron"
                 android:textColor="#fff"
                 android:fontFamily="@font/roboto_light"
                 android:textSize="27sp"/>
@@ -67,7 +67,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="agendar cita"
+                            android:text="texto1"
                             android:textAllCaps="true"
                             android:textSize="17sp"
                             android:fontFamily="@font/roboto_light"
@@ -101,7 +101,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="citas agendadas"
+                            android:text="texto2"
                             android:textAllCaps="true"
                             android:textSize="15sp"
                             android:fontFamily="@font/roboto_light"
@@ -178,7 +178,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Acerca de..."
+                            android:text="texto4"
                             android:textAllCaps="true"
                             android:textSize="17sp"
                             android:fontFamily="@font/roboto_light"

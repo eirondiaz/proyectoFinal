@@ -6,4 +6,245 @@
     android:layout_height="match_parent"
     tools:context="com.example.SeccionMedico.RegistroMedico">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_gradientepink"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_chevron_left_black_24dp"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registro"
+                android:fontFamily="@font/roboto_light"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:textSize="30sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-47dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/bg_lybottonlogin">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="informacion personal"
+                        android:textSize="20sp"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/roboto_light"
+                        android:textColor="@color/colorPrimary2"
+                        android:layout_marginTop="15dp"
+                        android:layout_gravity="left"/>
+
+                    <EditText
+                        android:id="@+id/edNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:hint="Nombres"
+                        android:background="@drawable/bg_edtxt"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary2"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"/>
+
+                    <EditText
+                        android:id="@+id/edApellido"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:hint="Apellidos"
+                        android:background="@drawable/bg_edtxt"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary2"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"/>
+
+                    <EditText
+                        android:id="@+id/edTelefono"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="phone"
+                        android:hint="Telefono"
+                        android:background="@drawable/bg_edtxt"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary2"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"/>
+
+                    <EditText
+                        android:id="@+id/edEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:hint="Email"
+                        android:background="@drawable/bg_edtxt"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary2"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"/>
+
+                    <EditText
+                        android:id="@+id/edContraseña"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:hint="Contraseña"
+                        android:background="@drawable/bg_edtxt"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary2"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"/>
+
+                    <EditText
+                        android:id="@+id/edRepContra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:hint="Repetir contraseña"
+                        android:background="@drawable/bg_edtxt"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary2"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"/>
+
+                    <Button
+                        android:id="@+id/fecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha de nacimiento"
+                        android:textColor="@color/colorPrimary2"
+                        android:background="@drawable/bg_edtxt"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"/>
+
+                    <Spinner
+                        android:id="@+id/spSexo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary2"
+                        android:background="@drawable/bg_edtxt"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"/>
+
+                    <EditText
+                        android:id="@+id/edExequtur"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="phone"
+                        android:hint="Exequatur"
+                        android:background="@drawable/bg_edtxt"
+                        android:padding="10dp"
+                        android:maxLength="6"
+                        android:textColor="@color/colorPrimary2"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="informacion profesional"
+                        android:textSize="20sp"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/roboto_light"
+                        android:textColor="@color/colorPrimary2"
+                        android:layout_marginTop="25dp"
+                        android:layout_gravity="left"/>
+
+                    <Spinner
+                        android:id="@+id/spClinica"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary2"
+                        android:background="@drawable/bg_edtxt"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"/>
+
+                    <Spinner
+                        android:id="@+id/spEspecialidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary2"
+                        android:background="@drawable/bg_edtxt"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"/>
+
+                    <Spinner
+                        android:id="@+id/spARS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary2"
+                        android:background="@drawable/bg_edtxt"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"/>
+
+                    <Button
+                        android:id="@+id/btnRegistrar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Registrar"
+                        android:textColor="#fff"
+                        android:background="@drawable/bg_btn"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"/>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

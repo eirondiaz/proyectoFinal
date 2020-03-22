@@ -1,8 +1,7 @@
-package com.example.SeccionPaciente;
+package com.example.SeccionMedico;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,30 +10,27 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.MainActivity;
+import com.example.Medico;
 import com.example.Paciente;
 import com.example.PreLogin;
 import com.example.proyectofinal.R;
 
-public class PacienteLogin extends AppCompatActivity implements View.OnClickListener {
+public class MedicoLogin extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView imgBack;
     private Button btnLogIn, btnRegistro;
     private EditText edEmail, edContraseña;
-    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_paciente_login);
-
-        dialog = new ProgressDialog(this);
+        setContentView(R.layout.activity_medico_login);
 
         edEmail = findViewById(R.id.edEmail);
         edContraseña = findViewById(R.id.edContraseña);
 
         imgBack = findViewById(R.id.imgBack   );
-        imgBack.setOnClickListener(this  );
+        imgBack.setOnClickListener(this);
 
         btnLogIn = findViewById(R.id.btnLogIn);
         btnLogIn.setOnClickListener(this);
@@ -48,7 +44,7 @@ public class PacienteLogin extends AppCompatActivity implements View.OnClickList
         switch (v.getId()){
 
             case R.id.imgBack:
-                startActivity(new Intent(PacienteLogin.this, PreLogin.class));
+                startActivity(new Intent(MedicoLogin.this, PreLogin.class));
                 break;
             case R.id.btnLogIn:
                 String email = edEmail.getText().toString();
@@ -58,11 +54,11 @@ public class PacienteLogin extends AppCompatActivity implements View.OnClickList
                     Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Paciente.IniciarSesion(this, email, password);
+                    Medico.IniciarSesion(this, email, password);
                 }
                 break;
             case R.id.btnRegistro:
-                startActivity(new Intent(PacienteLogin.this, RegistroPaciente.class));
+                startActivity(new Intent(MedicoLogin.this, RegistroMedico.class));
                 break;
         }
     }

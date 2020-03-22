@@ -1,20 +1,17 @@
-package com.example.SeccionPaciente;
-
-import android.app.DatePickerDialog;
-import android.graphics.Typeface;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
+package com.example.SeccionMedico;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Typeface;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.Medico;
 import com.example.Paciente;
 import com.example.proyectofinal.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,9 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Calendar;
-
-public class InformacionPersonal extends AppCompatActivity implements View.OnClickListener{
+public class InfoPersonalMedico extends AppCompatActivity implements View.OnClickListener{
 
     private EditText edNombre, edApellido, edTelefono, edCorreo;
     private TextView tvMainNombre;
@@ -39,7 +34,7 @@ public class InformacionPersonal extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_informacion_personal);
+        setContentView(R.layout.activity_info_personal_medico);
 
         edNombre = findViewById(R.id.edNombre);
         edApellido = findViewById(R.id.edApellido);
@@ -55,7 +50,7 @@ public class InformacionPersonal extends AppCompatActivity implements View.OnCli
 
         String id = mAuth.getCurrentUser().getUid();
 
-        mDatabase.child("Users").child("Pacientes").child(id).addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Users").child("Medicos").child(id).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 try {
@@ -85,10 +80,10 @@ public class InformacionPersonal extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
 
             case R.id.btnLogOut:
-                Paciente.LogOut(this);
+                Medico.LogOut(this);
                 finish();
                 break;
             case R.id.btnEditar:
@@ -140,11 +135,9 @@ public class InformacionPersonal extends AppCompatActivity implements View.OnCli
                 Toast.makeText(this, "No puedes dejar campos vacios", Toast.LENGTH_SHORT).show();
             }
             else{
-                Paciente.Actualizar(this, nombre, apellido, telefono);
+                //Medico.Actualizar(this, nombre, apellido, telefono);
                 editMode = true;
             }
-
-            //Update();
         }
     }
 }
