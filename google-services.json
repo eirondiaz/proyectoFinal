@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1068884647264",
+    "firebase_url": "https://fir-prueba-fab48.firebaseio.com",
+    "project_id": "fir-prueba-fab48",
+    "storage_bucket": "fir-prueba-fab48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068884647264:android:53646ea4ff1771e345d205",
+        "android_client_info": {
+          "package_name": "com.example.proyectofinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068884647264-hmvmhdo4pr1ur8jlm7hpcrvoc4oui4kn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu4yA0fr55UxtDLRkFIHWv3F7syzzpzUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068884647264-hmvmhdo4pr1ur8jlm7hpcrvoc4oui4kn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
