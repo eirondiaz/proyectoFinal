@@ -7,9 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.Fragments.BuscarFragment;
-import com.example.Fragments.HomeFragment;
-import com.example.Fragments.PerfilFragment;
+import com.example.FragmentsPaciente.BuscarFragment;
+import com.example.FragmentsPaciente.HomeFragment;
+import com.example.FragmentsPaciente.PerfilFragment;
 import com.example.proyectofinal.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

@@ -10,8 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.Medico;
-import com.example.Paciente;
+import com.example.Usuarios.Medico;
 import com.example.PreLogin;
 import com.example.proyectofinal.R;
 
@@ -47,15 +46,7 @@ public class MedicoLogin extends AppCompatActivity implements View.OnClickListen
                 startActivity(new Intent(MedicoLogin.this, PreLogin.class));
                 break;
             case R.id.btnLogIn:
-                String email = edEmail.getText().toString();
-                String password = edContraseña.getText().toString();
-
-                if (email.isEmpty() || password.isEmpty()){
-                    Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Medico.IniciarSesion(this, email, password);
-                }
+                startActivity(new Intent(MedicoLogin.this, DashboardMedico.class));
                 break;
             case R.id.btnRegistro:
                 startActivity(new Intent(MedicoLogin.this, RegistroMedico.class));

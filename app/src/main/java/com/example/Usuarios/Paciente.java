@@ -1,16 +1,24 @@
 package com.example.Usuarios;
 
-import org.json.JSONObject;
+import android.app.ProgressDialog;
 
-public class Paciente extends  Usuario{
+public class Paciente extends Usuario {
 
-     public JSONObject BuscarMedico(){
+    ProgressDialog dialog;
 
-          return new JSONObject();
-     }
+    public static void Registrar() {
 
-     public void SolicitarCita(){
+    }
 
-     }
+    public static void IniciarSesion(){
 
+    }
+
+    public static void LogOut(){
+
+    }
+
+    public static void Actualizar(){
+
+    }
 }

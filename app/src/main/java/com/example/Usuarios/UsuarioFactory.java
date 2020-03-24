@@ -1,4 +1,8 @@
-package com.example;
+package com.example.Usuarios;
+
+import com.example.Usuarios.Medico;
+import com.example.Usuarios.Paciente;
+import com.example.Usuarios.Usuario;
 
 public class UsuarioFactory {
 

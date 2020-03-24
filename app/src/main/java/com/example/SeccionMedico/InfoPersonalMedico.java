@@ -11,15 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.Medico;
-import com.example.Paciente;
+import com.example.Usuarios.Medico;
 import com.example.proyectofinal.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class InfoPersonalMedico extends AppCompatActivity implements View.OnClickListener{
 
@@ -27,9 +20,6 @@ public class InfoPersonalMedico extends AppCompatActivity implements View.OnClic
     private TextView tvMainNombre;
     private Button btnLogOut, btnEditar;
     boolean editMode = true;
-
-    private FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,35 +35,6 @@ public class InfoPersonalMedico extends AppCompatActivity implements View.OnClic
         btnEditar = findViewById(R.id.btnEditar);
         btnEditar.setOnClickListener(this);
 
-        mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-
-        String id = mAuth.getCurrentUser().getUid();
-
-        mDatabase.child("Users").child("Medicos").child(id).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                try {
-                    String nombre = dataSnapshot.child("nombre").getValue().toString();
-                    edNombre.setText(nombre);
-                    String apellido = dataSnapshot.child("apellido").getValue().toString();
-                    edApellido.setText(apellido);
-                    String telefono = dataSnapshot.child("telefono").getValue().toString();
-                    edTelefono.setText(telefono);
-                    String correo = dataSnapshot.child("email").getValue().toString();
-                    edCorreo.setText(correo);
-
-                    tvMainNombre.setText(nombre + " " + apellido);
-                }
-                catch (Exception e){}
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
         btnLogOut = findViewById(R.id.btnLogOut);
         btnLogOut.setOnClickListener(this);
     }
@@ -83,8 +44,6 @@ public class InfoPersonalMedico extends AppCompatActivity implements View.OnClic
         switch (v.getId()) {
 
             case R.id.btnLogOut:
-                Medico.LogOut(this);
-                finish();
                 break;
             case R.id.btnEditar:
                 editProcess();
@@ -135,7 +94,7 @@ public class InfoPersonalMedico extends AppCompatActivity implements View.OnClic
                 Toast.makeText(this, "No puedes dejar campos vacios", Toast.LENGTH_SHORT).show();
             }
             else{
-                //Medico.Actualizar(this, nombre, apellido, telefono);
+                //AQUI VA EL METODO DE ACTUALIZAR DATOS DEL MEDICO
                 editMode = true;
             }
         }

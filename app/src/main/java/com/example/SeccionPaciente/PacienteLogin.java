@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.MainActivity;
-import com.example.Paciente;
+import com.example.Usuarios.Paciente;
 import com.example.PreLogin;
 import com.example.proyectofinal.R;
 
@@ -51,15 +51,7 @@ public class PacienteLogin extends AppCompatActivity implements View.OnClickList
                 startActivity(new Intent(PacienteLogin.this, PreLogin.class));
                 break;
             case R.id.btnLogIn:
-                String email = edEmail.getText().toString();
-                String password = edContraseña.getText().toString();
-
-                if (email.isEmpty() || password.isEmpty()){
-                    Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Paciente.IniciarSesion(this, email, password);
-                }
+                startActivity(new Intent(PacienteLogin.this, MainActivity.class));
                 break;
             case R.id.btnRegistro:
                 startActivity(new Intent(PacienteLogin.this, RegistroPaciente.class));

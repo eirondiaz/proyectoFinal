@@ -3,7 +3,6 @@ package com.example.SeccionMedico;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -13,14 +12,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.Medico;
-import com.example.Paciente;
-import com.example.SeccionPaciente.PacienteLogin;
-import com.example.SeccionPaciente.RegistroPaciente;
+import com.example.Usuarios.Medico;
 import com.example.proyectofinal.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 
@@ -42,16 +35,10 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
     private String[] clinicaList = new String[]
             {"Hospital", "Hospital Local Boca Chica", "Dentistica Enmanuel"};
 
-    private FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_medico);
-
-        mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         edNombre = findViewById(R.id.edNombre);
         edApellido = findViewById(R.id.edApellido);
@@ -85,36 +72,7 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()){
 
             case R.id.btnRegistrar:
-                nombre = edNombre.getText().toString();
-                apellido = edApellido.getText().toString();
-                telefono = edTelefono.getText().toString();
-                email = edEmail.getText().toString();
-                contraseña = edContraseña.getText().toString();
-                repcontraseña = edRepContra.getText().toString();
-                fecha = btnFecha.getText().toString();
-                sexo = spSexo.getSelectedItem().toString();
-                exequatur = edExequatur.getText().toString();
-                especialidad = spEspecialidad.getSelectedItem().toString();
-                ars = spARS.getSelectedItem().toString();
-                hospital = spClinica.getSelectedItem().toString();
 
-                if (nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty() || email.isEmpty() || contraseña.isEmpty() || fecha.equalsIgnoreCase("FECHA DE NACIMIENTO") || especialidad.equalsIgnoreCase("especialidad") || hospital.equalsIgnoreCase("hospital")){
-                    Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    if (contraseña.length() < 6){
-                        Toast.makeText(this, "La contraseña debe tener mas de 6 caracteres", Toast.LENGTH_SHORT).show();
-                    }
-                    else{
-                        if (contraseña.equals(repcontraseña)){
-                            Medico.Registrar(this, email, contraseña, nombre, apellido, telefono, fecha, sexo, exequatur, especialidad, ars, hospital);
-                            finish();
-                        }
-                        else {
-                            Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                }
                 break;
             case R.id.fecha:
                 getDate();

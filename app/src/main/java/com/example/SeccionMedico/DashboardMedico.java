@@ -7,9 +7,6 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.Fragments.BuscarFragment;
-import com.example.Fragments.HomeFragment;
-import com.example.Fragments.PerfilFragment;
 import com.example.FragmentsMedico.MedicoBuscarFragment;
 import com.example.FragmentsMedico.MedicoHomeFragment;
 import com.example.FragmentsMedico.MedicoPerfilFragment;
