@@ -62,7 +62,7 @@ public class MedicoLogin extends AppCompatActivity implements View.OnClickListen
 
 
         UsuarioFactory usuarioFactory = new UsuarioFactory();
-        Medico medico = (Medico) usuarioFactory.getUsuario("medico");
+         medico = (Medico) usuarioFactory.getUsuario("medico");
     }
 
     @Override
@@ -74,7 +74,6 @@ public class MedicoLogin extends AppCompatActivity implements View.OnClickListen
                 break;
             case R.id.btnLogIn:
                 cargarServer();
-
                 break;
             case R.id.btnRegistro:
                 startActivity(new Intent(MedicoLogin.this, RegistroMedico.class));
@@ -85,20 +84,21 @@ public class MedicoLogin extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onResponse(JSONObject response) {
-        progressDialog.hide();
-
-        JSONArray array = response.optJSONArray("usuario");
-        JSONObject object = null;
+        JSONArray json = response.optJSONArray("usuario");
 
         try {
-              object = array.getJSONObject(0);
-              medico.setEmail(object.getString("correo"));
-              medico.setContraseña(object.getString("pass"));
+              jsonObject = json.getJSONObject(0);
+              medico.setIdUsuario(jsonObject .optInt("idUsuario"));
+              medico.setEmail(jsonObject.optString("correo"));
+              medico.setContraseña(jsonObject.optString("pass"));
 
-              if(medico.getEmail().equals(email) && medico.getContraseña().equals(password)){
-                  medicoHome();
+          //  Toast.makeText(this, medico.getEmail() + " " + medico.getContraseña(), Toast.LENGTH_SHORT ).show();
+             progressDialog.hide();
+
+            if(medico.getEmail().equals(email) && medico.getContraseña().equals(password)){
+                medicoHome();
               }  else {
-                      AlertDialog.Builder dialog = new AlertDialog.Builder(getApplication());
+                  AlertDialog.Builder dialog = new AlertDialog.Builder(this);
                       dialog.setTitle("Aviso!");
                       dialog.setMessage("Usuario y contraseña incorrecta");
                       dialog.setPositiveButton("dialog", new DialogInterface.OnClickListener() {
@@ -106,17 +106,19 @@ public class MedicoLogin extends AppCompatActivity implements View.OnClickListen
                           public void onClick(DialogInterface dialog, int which) {
                               dialog.dismiss();
                           }
-                      }) ; 
+                      }) ;
+                      dialog.create().show();
               }
 
-        }  catch (JSONException e){
-            e.printStackTrace();
+        }
+        catch (JSONException  j){
+            j.printStackTrace();
         }
     }
 
     @Override
     public void onErrorResponse(VolleyError error) {
-         progressDialog.hide();
+      progressDialog.hide();
         AlertDialog.Builder alerta = new AlertDialog.Builder(this);
         alerta.setTitle("Aviso!");
         alerta.setMessage("Acaba de ocurrir un eror");
@@ -126,17 +128,18 @@ public class MedicoLogin extends AppCompatActivity implements View.OnClickListen
                 dialog.dismiss();
             }
         }) ;
+
+        alerta.create().show();
     }
 
     public void cargarServer() {
         progressDialog = new ProgressDialog(this);
-        progressDialog.setCancelable(false);
         progressDialog.setMessage("Cargando...");
         progressDialog.show();
 
           email = edEmail.getText().toString();
           password = edContraseña.getText().toString();
-          String url ="https://proyectofinalprog2.000webhostapp.com/loginUsuario.php?correo=%22"+email+"%22&&pass=%"+password+"%22";
+          String url ="https://proyectofinalprog2.000webhostapp.com/loginUsuario.php?correo=%22"+email+"%22&&pass=%22"+password+"%22";
           JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url , null, this , this );
           requestQueue.add(request);
     }
