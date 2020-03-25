@@ -2,6 +2,10 @@ package com.example.SeccionMedico;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.DownloadManager;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,14 +14,19 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.Usuarios.Medico;
 import com.example.PreLogin;
+import com.example.Usuarios.UsuarioFactory;
 import com.example.proyectofinal.R;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MedicoLogin extends AppCompatActivity implements View.OnClickListener , Response.Listener<JSONObject>, Response.ErrorListener {
@@ -30,6 +39,7 @@ public class MedicoLogin extends AppCompatActivity implements View.OnClickListen
     private RequestQueue requestQueue;
     private String email ;
     private String password ;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +59,10 @@ public class MedicoLogin extends AppCompatActivity implements View.OnClickListen
 
         btnRegistro = findViewById(R.id.btnRegistro);
         btnRegistro.setOnClickListener(this);
+
+
+        UsuarioFactory usuarioFactory = new UsuarioFactory();
+        Medico medico = (Medico) usuarioFactory.getUsuario("medico");
     }
 
     @Override
@@ -71,17 +85,60 @@ public class MedicoLogin extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onResponse(JSONObject response) {
+        progressDialog.hide();
 
+        JSONArray array = response.optJSONArray("usuario");
+        JSONObject object = null;
+
+        try {
+              object = array.getJSONObject(0);
+              medico.setEmail(object.getString("correo"));
+              medico.setContraseña(object.getString("pass"));
+
+              if(medico.getEmail().equals(email) && medico.getContraseña().equals(password)){
+                  medicoHome();
+              }  else {
+                      AlertDialog.Builder dialog = new AlertDialog.Builder(getApplication());
+                      dialog.setTitle("Aviso!");
+                      dialog.setMessage("Usuario y contraseña incorrecta");
+                      dialog.setPositiveButton("dialog", new DialogInterface.OnClickListener() {
+                          @Override
+                          public void onClick(DialogInterface dialog, int which) {
+                              dialog.dismiss();
+                          }
+                      }) ; 
+              }
+
+        }  catch (JSONException e){
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void onErrorResponse(VolleyError error) {
-
+         progressDialog.hide();
+        AlertDialog.Builder alerta = new AlertDialog.Builder(this);
+        alerta.setTitle("Aviso!");
+        alerta.setMessage("Acaba de ocurrir un eror");
+        alerta.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        }) ;
     }
 
     public void cargarServer() {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Cargando...");
+        progressDialog.show();
 
-
+          email = edEmail.getText().toString();
+          password = edContraseña.getText().toString();
+          String url ="https://proyectofinalprog2.000webhostapp.com/loginUsuario.php?correo=%22"+email+"%22&&pass=%"+password+"%22";
+          JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url , null, this , this );
+          requestQueue.add(request);
     }
 
     public void medicoHome(){
