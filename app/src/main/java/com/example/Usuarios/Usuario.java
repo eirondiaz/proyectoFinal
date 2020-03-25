@@ -9,6 +9,7 @@ public abstract class Usuario {
     private String contraseña;
     private String fecha;
     private String sexo;
+    private  int idUsuario ;
 
     public static void Registrar(){
 
@@ -36,6 +37,10 @@ public abstract class Usuario {
 
     public String getTelefono() {
         return telefono;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
     public void setTelefono(String telefono) {
@@ -72,5 +77,9 @@ public abstract class Usuario {
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }
