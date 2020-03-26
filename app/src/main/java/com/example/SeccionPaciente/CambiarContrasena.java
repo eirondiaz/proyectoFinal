@@ -52,12 +52,7 @@ public class CambiarContrasena extends AppCompatActivity implements View.OnClick
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         correo = preferences.getString("email", "");
         passActualReal = preferences.getString("pass", "");
-
-        Toast.makeText(this,correo, Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, passActualReal, Toast.LENGTH_SHORT).show();
-
-
-
+        
     }
 
     @Override
