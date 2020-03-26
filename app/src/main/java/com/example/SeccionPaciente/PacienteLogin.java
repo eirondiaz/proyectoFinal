@@ -133,6 +133,7 @@ public class PacienteLogin extends AppCompatActivity implements View.OnClickList
                 editor.putString("telefono", pac.getTelefono());
                 editor.putString("sexo", pac.getSexo());
                 editor.putString("tipo", tipo);
+                editor.putString("pass", password);
                 editor.commit();
                 startActivity(new Intent(PacienteLogin.this, MainActivity.class));
                 finish();

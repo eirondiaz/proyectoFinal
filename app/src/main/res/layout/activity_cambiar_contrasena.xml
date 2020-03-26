@@ -27,7 +27,7 @@
                 android:padding="20dp">
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/editText_pass_actual"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -39,7 +39,7 @@
                     android:textColor="@color/colorPrimary2"/>
 
                 <EditText
-                    android:id="@+id/editText2"
+                    android:id="@+id/editText_pass_new"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -51,24 +51,24 @@
                     android:textColor="@color/colorPrimary2"/>
 
                 <EditText
-                    android:id="@+id/editText3"
+                    android:id="@+id/editText_pass_confirm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint="Confirmar contraseña"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/bg_edtxt"
+                    android:ems="10"
+                    android:hint="Confirmar contraseña"
+                    android:inputType="textPersonName"
                     android:padding="10dp"
-                    android:textColor="@color/colorPrimary2"/>
+                    android:textColor="@color/colorPrimary2" />
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_cambiar_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cambiar contraseña"
