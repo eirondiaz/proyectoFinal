@@ -1,5 +1,8 @@
 package com.example.SeccionPaciente;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +14,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.MainActivity;
+import com.example.PreLogin;
 import com.example.Usuarios.Paciente;
 import com.example.proyectofinal.R;
 
@@ -32,6 +37,8 @@ public class InformacionPersonal extends AppCompatActivity implements View.OnCli
         edCorreo = findViewById(R.id.edCorreo);
         tvMainNombre = findViewById(R.id.tvMainNombre);
 
+        getPreferences();
+
         btnEditar = findViewById(R.id.btnEditar);
         btnEditar.setOnClickListener(this);
 
@@ -39,11 +46,25 @@ public class InformacionPersonal extends AppCompatActivity implements View.OnCli
         btnLogOut.setOnClickListener(this);
     }
 
+    private void getPreferences(){
+        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        edNombre.setText(preferences.getString("nombre", ""));
+        edApellido.setText(preferences.getString("apellido", ""));
+        edTelefono.setText(preferences.getString("telefono", ""));
+        edCorreo.setText(preferences.getString("email", ""));
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
 
             case R.id.btnLogOut:
+                SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("tipo", "");
+                editor.commit();
+                startActivity(new Intent(InformacionPersonal.this, PreLogin.class));
+                finish();
                 break;
             case R.id.btnEditar:
                 editProcess();

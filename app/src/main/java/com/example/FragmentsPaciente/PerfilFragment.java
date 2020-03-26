@@ -1,6 +1,8 @@
 package com.example.FragmentsPaciente;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +32,8 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
         tvNombre = view.findViewById(R.id.tvNombre);
         tvEmail = view.findViewById(R.id.tvEmail);
 
+        getPreferences();
+
         lyHistCitas = view.findViewById(R.id.lyHistCitas);
         lyHistCitas.setOnClickListener(this);
 
@@ -40,6 +44,12 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
         lyCamContra.setOnClickListener(this);
 
         return view;
+    }
+
+    private void getPreferences(){
+        SharedPreferences preferences = this.getActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
+        tvNombre.setText(preferences.getString("nombre", "") + " " + preferences.getString("apellido", ""));
+        tvEmail.setText(preferences.getString("email", ""));
     }
 
     @Override

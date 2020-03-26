@@ -1,6 +1,7 @@
 package com.example.SeccionPaciente;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -35,6 +37,8 @@ public class RegistroPaciente extends AppCompatActivity implements View.OnClickL
 
     private RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
+
+    ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,13 +69,39 @@ public class RegistroPaciente extends AppCompatActivity implements View.OnClickL
         btnRegistrar.setOnClickListener(this);
     }
 
-    @Override
-    public void onErrorResponse(VolleyError error) {
+    public void CargarWebService(){
 
+        dialog = new ProgressDialog(this);
+        dialog.setMessage("Registrando");
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+
+        String correo = edEmail.getText().toString();
+        String pass = edContraseña.getText().toString();
+
+        if (correo.isEmpty() || pass.isEmpty()) {
+            Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONRegistroPaciente.php?correo=" + correo + "&pass=" + pass;
+
+            url = url.replace(" ", "%20");
+
+            jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
+            request.add(jsonObjectRequest);
+        }
     }
 
     @Override
     public void onResponse(JSONObject response) {
+        Toast.makeText(this, "Se ha registrado correctamente", Toast.LENGTH_SHORT).show();
+        dialog.dismiss();
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        Toast.makeText(this, "No se pudo registrar", Toast.LENGTH_SHORT).show();
+        dialog.dismiss();
 
     }
 
@@ -80,6 +110,7 @@ public class RegistroPaciente extends AppCompatActivity implements View.OnClickL
         switch (v.getId()){
 
             case R.id.btnRegistrar:
+                CargarWebService();
                 break;
         }
     }

@@ -1,5 +1,7 @@
 package com.example.FragmentsPaciente;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +27,9 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         tvNombre = view.findViewById(R.id.tvNombre);
+
+        SharedPreferences preferences = this.getActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
+        tvNombre.setText("Hi, " + preferences.getString("nombre", "") + " " + preferences.getString("apellido", ""));
 
         cardViewTexto = view.findViewById(R.id.cardViewTexto);
         cardViewTexto.setOnClickListener(new View.OnClickListener() {
