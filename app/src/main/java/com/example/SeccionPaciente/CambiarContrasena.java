@@ -105,20 +105,20 @@ public class CambiarContrasena extends AppCompatActivity implements View.OnClick
     }
 
     @Override
-    public void onErrorResponse(VolleyError error) {
-
-        dialog.dismiss();
-        Toast.makeText(this,"Ha acurrido un error" +error.getMessage(), Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
     public void onResponse(JSONObject response) {
 
         dialog.dismiss();
-        Toast.makeText(this,"Se ha actualizado correctamente", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"La contraseña se ha actualizado correctamente", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+
+        dialog.dismiss();
+        Toast.makeText(this,"Ha ocurrido un error al actualizar la contraseña" +error.getMessage(), Toast.LENGTH_SHORT).show();
+
     }
 
     public void alerta(String titulo, String mensaje){

@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment {
         tvNombre = view.findViewById(R.id.tvNombre);
 
         SharedPreferences preferences = this.getActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
-        tvNombre.setText("Hi, " + preferences.getString("nombre", "") + " " + preferences.getString("apellido", ""));
+        tvNombre.setText("Hi, " + preferences.getString("nombre", ""));
 
         cardViewTexto = view.findViewById(R.id.cardViewTexto);
         cardViewTexto.setOnClickListener(new View.OnClickListener() {

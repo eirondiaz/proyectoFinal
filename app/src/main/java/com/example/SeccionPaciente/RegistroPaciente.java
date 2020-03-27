@@ -78,17 +78,37 @@ public class RegistroPaciente extends AppCompatActivity implements View.OnClickL
 
         String correo = edEmail.getText().toString();
         String pass = edContraseña.getText().toString();
+        String reppass = edRepContra.getText().toString();
+        String nombre = edNombre.getText().toString();
+        String apellido = edApellido.getText().toString();
+        String telefono = edTelefono.getText().toString();
+        String sexo = spSexo.getSelectedItem().toString();
+        String fecha = btnFecha.getText().toString();
 
-        if (correo.isEmpty() || pass.isEmpty()) {
+        if (correo.isEmpty() || pass.isEmpty() || nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty() || fecha.equalsIgnoreCase("fecha de nacimiento")) {
             Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+            dialog.dismiss();
         }
         else{
-            String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONRegistroPaciente.php?correo=" + correo + "&pass=" + pass;
 
-            url = url.replace(" ", "%20");
+            if(pass.length() < 6){
+                Toast.makeText(this, "La contraseña debe tener mas de 6 caracteres", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+            else{
+                if(!pass.equals(reppass)){
+                    Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+                else{
+                    String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONRegistroPaciente2.php?correo=" + correo + "&pass=" + pass + "&Nombres=" + nombre + "&Apellidos=" + apellido + "&Telefono=" + telefono + "&Sexo=" + sexo + "&Fecha_Nacimiento=" + fecha;
 
-            jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
-            request.add(jsonObjectRequest);
+                    url = url.replace(" ", "%20");
+
+                    jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
+                    request.add(jsonObjectRequest);
+                }
+            }
         }
     }
 
@@ -96,11 +116,13 @@ public class RegistroPaciente extends AppCompatActivity implements View.OnClickL
     public void onResponse(JSONObject response) {
         Toast.makeText(this, "Se ha registrado correctamente", Toast.LENGTH_SHORT).show();
         dialog.dismiss();
+        startActivity(new Intent(RegistroPaciente.this, PacienteLogin.class));
+        finish();
     }
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        Toast.makeText(this, "No se pudo registrar", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show();
         dialog.dismiss();
 
     }
@@ -125,7 +147,7 @@ public class RegistroPaciente extends AppCompatActivity implements View.OnClickL
         DatePickerDialog datepicker = new DatePickerDialog(RegistroPaciente.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                btnFecha.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
+                btnFecha.setText(year + "-" + (month + 1) + "-" + dayOfMonth);
             }
         } , dia, mes, ano);
         datepicker.getDatePicker().setMinDate(System.currentTimeMillis());

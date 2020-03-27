@@ -48,6 +48,7 @@ public class InformacionPersonal extends AppCompatActivity implements View.OnCli
 
     private void getPreferences(){
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        tvMainNombre.setText(preferences.getString("nombre", "") + " " + preferences.getString("apellido", ""));
         edNombre.setText(preferences.getString("nombre", ""));
         edApellido.setText(preferences.getString("apellido", ""));
         edTelefono.setText(preferences.getString("telefono", ""));

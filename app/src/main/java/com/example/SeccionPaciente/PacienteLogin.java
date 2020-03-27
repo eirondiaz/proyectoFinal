@@ -141,8 +141,8 @@ public class PacienteLogin extends AppCompatActivity implements View.OnClickList
             else{
                 AlertDialog.Builder dialog = new AlertDialog.Builder(this);
                 dialog.setTitle("Aviso!");
-                dialog.setMessage("Usuario y contraseña incorrecta");
-                dialog.setPositiveButton("dialog", new DialogInterface.OnClickListener() {
+                dialog.setMessage("Usuario o contraseña incorrecta");
+                dialog.setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
