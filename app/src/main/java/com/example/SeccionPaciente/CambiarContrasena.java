@@ -76,7 +76,7 @@ public class CambiarContrasena extends AppCompatActivity implements View.OnClick
             alerta("Error!", "Debe llenar todos los campos");
 
         }else{
-            if (passNew.equalsIgnoreCase(passNewConfirm)){
+            if (passNew.equals(passNewConfirm)){
 
                 if(passActual.equalsIgnoreCase(passActualReal)){
 

@@ -1,5 +1,6 @@
 package com.example.SeccionPaciente;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,17 +15,29 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.MainActivity;
 import com.example.PreLogin;
 import com.example.Usuarios.Paciente;
 import com.example.proyectofinal.R;
 
-public class InformacionPersonal extends AppCompatActivity implements View.OnClickListener{
+import org.json.JSONObject;
+
+public class InformacionPersonal extends AppCompatActivity implements View.OnClickListener, Response.Listener<JSONObject>, Response.ErrorListener{
 
     private EditText edNombre, edApellido, edTelefono, edCorreo;
     private TextView tvMainNombre;
     private Button btnLogOut, btnEditar;
+    private String idPaciente, nombre, apellido, telefono;
     boolean editMode = true;
+
+    private RequestQueue request;
+    JsonObjectRequest jsonObjectRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +55,8 @@ public class InformacionPersonal extends AppCompatActivity implements View.OnCli
         btnEditar = findViewById(R.id.btnEditar);
         btnEditar.setOnClickListener(this);
 
+        request = Volley.newRequestQueue(this);
+
         btnLogOut = findViewById(R.id.btnLogOut);
         btnLogOut.setOnClickListener(this);
     }
@@ -53,6 +68,45 @@ public class InformacionPersonal extends AppCompatActivity implements View.OnCli
         edApellido.setText(preferences.getString("apellido", ""));
         edTelefono.setText(preferences.getString("telefono", ""));
         edCorreo.setText(preferences.getString("email", ""));
+        idPaciente = preferences.getString("idpaciente", "");
+    }
+
+    public void CargarWebService(){
+
+        nombre = edNombre.getText().toString();
+        apellido = edApellido.getText().toString();
+        telefono = edTelefono.getText().toString();
+        String correo = edCorreo.getText().toString();
+
+        if (nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty() || correo.isEmpty()) {
+            Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+        }
+        else{
+
+            String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONEditarPaciente.php?nombre=" + nombre + "&apellido=" + apellido + "&telefono=" + telefono + "&id=" + idPaciente;
+
+            url = url.replace(" ", "%20");
+
+            jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
+            request.add(jsonObjectRequest);
+        }
+    }
+
+    @Override
+    public void onResponse(JSONObject response) {
+        Toast.makeText(this, "Datos actualizados correctamente", Toast.LENGTH_SHORT).show();
+        tvMainNombre.setText(nombre + " " + apellido);
+        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("nombre", nombre);
+        editor.putString("apellido", apellido);
+        editor.putString("telefono", telefono);
+        editor.commit();
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        Toast.makeText(this, "Error al actualizar los datos", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -116,7 +170,7 @@ public class InformacionPersonal extends AppCompatActivity implements View.OnCli
                 Toast.makeText(this, "No puedes dejar campos vacios", Toast.LENGTH_SHORT).show();
             }
             else{
-                //AQUI VA EL METODO DE ACTUALIZAR
+                CargarWebService();
                 editMode = true;
             }
         }

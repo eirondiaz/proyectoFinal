@@ -46,6 +46,7 @@ public class PacienteLogin extends AppCompatActivity implements View.OnClickList
     private  JSONObject jsonObject, jsonObject2;
     private String email, password;
     private RequestQueue requestQueue;
+    private String idPaciente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,6 +121,7 @@ public class PacienteLogin extends AppCompatActivity implements View.OnClickList
             pac.setApellido(jsonObject.optString("Apellidos"));
             pac.setTelefono(jsonObject.optString("Telefono"));
             pac.setSexo(jsonObject.optString("Sexo"));
+            idPaciente = jsonObject.optString("idPacientes");
             String tipo = jsonObject.getString("tipo");
 
             dialog.hide();
@@ -134,6 +136,7 @@ public class PacienteLogin extends AppCompatActivity implements View.OnClickList
                 editor.putString("sexo", pac.getSexo());
                 editor.putString("tipo", tipo);
                 editor.putString("pass", password);
+                editor.putString("idpaciente", idPaciente);
                 editor.commit();
                 startActivity(new Intent(PacienteLogin.this, MainActivity.class));
                 finish();
@@ -172,72 +175,4 @@ public class PacienteLogin extends AppCompatActivity implements View.OnClickList
 
         alerta.create().show();
     }
-
-    /*public void LogIn(String url) {
-        final ProgressDialog dialog = new ProgressDialog(this);
-        dialog.setMessage("Iniciando Sesión");
-        dialog.setCanceledOnTouchOutside(false);
-        dialog.show();
-
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-
-                JSONObject jsonObject = null;
-                JSONArray jsonArray = null;
-                JSONObject object = null;
-                
-                if (!response.isEmpty()){
-                    Toast.makeText(PacienteLogin.this, "Correcto", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-                else{
-                    Toast.makeText(PacienteLogin.this, "Invalido", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-
-                try {
-                    //jsonObject = new JSONObject(response);
-                    //jsonArray = jsonObject.getJSONArray("usuario");
-
-                    if (!response.isEmpty()) {
-
-                        object = jsonArray.getJSONObject(0);
-
-                        String correo = object.getString("correo").trim();
-                        String pass = object.getString("pass").trim();
-                        dialog.dismiss();
-
-                        Toast.makeText(PacienteLogin.this, "Correcto", Toast.LENGTH_SHORT).show();
-
-                        //startActivity(new Intent(PacienteLogin.this, MainActivity.class));
-                        //dialog.dismiss();
-                    } else {
-                        Toast.makeText(PacienteLogin.this, "Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show();
-                        dialog.dismiss();
-                    }
-                } catch (JSONException e) {
-                    dialog.dismiss();
-                    Toast.makeText(PacienteLogin.this, "Catch", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(PacienteLogin.this, error.toString(), Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-            }
-        }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> parametros = new HashMap<String, String>();
-                parametros.put("correo", edEmail.getText().toString());
-                parametros.put("pass", edContraseña.getText().toString());
-                return parametros;
-            }
-        };
-
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
-    }*/
 }
