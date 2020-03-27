@@ -3,6 +3,8 @@ package com.example.SeccionMedico;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -12,17 +14,28 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.Usuarios.Medico;
 import com.example.proyectofinal.R;
 
+import org.json.JSONObject;
+
 import java.util.Calendar;
 
-public class RegistroMedico extends AppCompatActivity implements View.OnClickListener{
+public class RegistroMedico extends AppCompatActivity implements View.OnClickListener , Response.Listener<JSONObject> , Response.ErrorListener {
 
     private Spinner spSexo, spEspecialidad, spARS, spClinica;
     private Button btnRegistrar, btnFecha;
     private EditText edNombre, edApellido, edTelefono, edEmail, edContraseña, edRepContra, edExequatur;
-    private String nombre, apellido, telefono, email, contraseña, repcontraseña, fecha, sexo, exequatur, especialidad, ars, hospital;
+    private String nombre, apellido , email, contraseña, repcontraseña, fecha, sexo, especialidad, ars, hospital;
+    private  int exequatur,  telefono ;
+    private ProgressDialog progressDialog;
+    private RequestQueue requestQueue;
+    private  JsonObjectRequest jsonObjectRequest;
 
     private String[] sexoList = new String[]{"Masculino", "Femenino"};
 
@@ -34,6 +47,7 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
 
     private String[] clinicaList = new String[]
             {"Hospital", "Hospital Local Boca Chica", "Dentistica Enmanuel"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,4 +110,51 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
         datepicker.getDatePicker().setMinDate(System.currentTimeMillis());
         datepicker.show();
     }
+
+
+    @Override
+    public void onResponse(JSONObject response) {
+
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+
+    }
+
+
+
+
+    public void cargarServer() {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Registrando usuario...");
+        progressDialog.show();
+    //    edNombre, edApellido, edTelefono, edEmail, edContraseña, edRepContra, edExequatur;
+     // nombre, apellido , email, contraseña, repcontraseña, fecha, sexo, especialidad, ars, hospital;
+     //   exequatur,  telefono ;
+
+         nombre = edNombre.getText().toString();
+         apellido = edApellido.getText().toString();
+         telefono =Integer.getInteger(edTelefono.getText().toString());
+         email = edEmail.getText().toString();
+         contraseña = edContraseña.getText().toString();
+         repcontraseña = edRepContra.getText().toString();
+         fecha = btnFecha.getText().toString();
+         sexo = spSexo.getSelectedItem().toString();
+         exequatur = Integer.getInteger(edExequatur.getText().toString());
+         especialidad = especialidadList[spARS.getSelectedItemPosition()];
+          ars = ARSList [spARS.getSelectedItemPosition()];
+          hospital = clinicaList[spClinica.getSelectedItemPosition()];
+
+
+        String url = "\n" +
+                "https://proyectofinalprog2.000webhostapp.com/registroMedico.php?nombre=%22"+nombre+"%22&apellido=%22"+apellido+"%22" +
+                "&telefono="+telefono+"&correo=%22"+email+"%22&pass=%22"+contraseña+"%22&sexo=%22"+sexo+"%22&fecha=%27"+fecha+"%27" +
+                "&exequatur="+exequatur+"&especialida=%22"+especialidad+"%22&hospital=%22d"+hospital+"%22&seguro=%22"+ars+"%22";
+
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url , null, this , this );
+        requestQueue.add(request);
+    }
+
 }

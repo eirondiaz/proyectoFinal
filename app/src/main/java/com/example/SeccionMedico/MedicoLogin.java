@@ -101,7 +101,7 @@ public class MedicoLogin extends AppCompatActivity implements View.OnClickListen
                   AlertDialog.Builder dialog = new AlertDialog.Builder(this);
                       dialog.setTitle("Aviso!");
                       dialog.setMessage("Usuario y contraseña incorrecta");
-                      dialog.setPositiveButton("dialog", new DialogInterface.OnClickListener() {
+                      dialog.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                           @Override
                           public void onClick(DialogInterface dialog, int which) {
                               dialog.dismiss();
@@ -134,7 +134,7 @@ public class MedicoLogin extends AppCompatActivity implements View.OnClickListen
 
     public void cargarServer() {
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Cargando...");
+        progressDialog.setMessage("Iniciando seccion...");
         progressDialog.show();
 
           email = edEmail.getText().toString();
@@ -146,6 +146,7 @@ public class MedicoLogin extends AppCompatActivity implements View.OnClickListen
 
     public void medicoHome(){
         Intent home = new Intent(MedicoLogin.this, DashboardMedico.class);
+        home.putExtra("idUsuario", medico.getIdUsuario());
         startActivity(home);
     }
 }
