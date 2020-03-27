@@ -10,6 +10,14 @@ public abstract class Usuario {
     private String fecha;
     private String sexo;
     private  int idUsuario ;
+    private int foto;
+    public void setFoto(int foto) {
+        this.foto = foto;
+    }
+
+    public int getFoto() {
+        return foto;
+    }
 
     public static void Registrar(){
 

@@ -1,0 +1,7 @@
+#Fri Mar 27 07:57:49 BOT 2020
+base.0=C\:\\Users\\tejad\\OneDrive\\Escritorio\\proyecto_final\\proyectoFinal\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=C\:\\Users\\tejad\\OneDrive\\Escritorio\\proyecto_final\\proyectoFinal\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex

@@ -2,14 +2,26 @@ package com.example.Usuarios;
 
 import android.app.ProgressDialog;
 
+import com.example.SeccionMedico.Especialidad;
+
 public class Medico extends Usuario {
 
     private String exequatur;
     private String especialidad;
     private String ars;
     private String hospital;
-
     ProgressDialog dialog;
+
+
+    public Medico(String Nombre, String Especialidad, String Hospital , int Foto) {
+        setNombre(Nombre);
+        setEspecialidad(Especialidad);
+        setHospital(Hospital);
+        setFoto(Foto);
+    }
+    public Medico(){
+
+    }
 
     public static void Registrar(){
 

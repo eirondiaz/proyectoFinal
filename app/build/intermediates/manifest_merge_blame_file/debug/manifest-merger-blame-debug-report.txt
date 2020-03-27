@@ -1,0 +1,87 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.proyectofinal"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:5:22-64
+12
+13    <application
+13-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:7:5-33:19
+14        android:allowBackup="true"
+14-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:8:9-35
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\f961a727fd6ff1bec6d760c391cc6822\core-1.1.0\AndroidManifest.xml:24:18-86
+16        android:debuggable="true"
+17        android:icon="@mipmap/ic_launcher"
+17-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:9:9-43
+18        android:label="@string/app_name"
+18-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:10:9-41
+19        android:roundIcon="@mipmap/ic_launcher_round"
+19-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:11:9-54
+20        android:supportsRtl="true"
+20-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:12:9-35
+21        android:testOnly="true"
+22        android:theme="@style/AppTheme" >
+22-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:13:9-40
+23        <activity android:name="com.example.SeccionMedico.InfoPersonalMedico" />
+23-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:14:9-90
+23-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:14:19-78
+24        <activity android:name="com.example.SeccionMedico.Ars" />
+24-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:15:9-66
+24-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:15:19-63
+25        <activity android:name="com.example.SeccionMedico.Especialidad" />
+25-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:16:9-75
+25-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:16:19-72
+26        <activity android:name="com.example.SeccionMedico.RegistroMedico" />
+26-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:17:9-77
+26-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:17:19-74
+27        <activity android:name="com.example.SeccionMedico.DashboardMedico" />
+27-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:18:9-78
+27-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:18:19-75
+28        <activity android:name="com.example.SeccionMedico.MedicoLogin" />
+28-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:19:9-74
+28-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:19:19-71
+29        <activity android:name="com.example.SeccionPaciente.CambiarContrasena" />
+29-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:20:9-82
+29-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:20:19-79
+30        <activity android:name="com.example.SeccionPaciente.InformacionPersonal" />
+30-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:21:9-84
+30-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:21:19-81
+31        <activity android:name="com.example.SeccionPaciente.HistorialCitas" />
+31-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:22:9-79
+31-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:22:19-76
+32        <activity android:name="com.example.SeccionPaciente.RegistroPaciente" />
+32-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:23:9-81
+32-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:23:19-78
+33        <activity android:name="com.example.SeccionPaciente.PacienteLogin" />
+33-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:24:9-78
+33-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:24:19-75
+34        <activity android:name="com.example.MainActivity" />
+34-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:25:9-61
+34-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:25:19-58
+35        <activity android:name="com.example.PreLogin" >
+35-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:26:9-32:20
+35-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:26:19-54
+36            <intent-filter>
+36-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:27:13-31:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:28:17-69
+37-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:28:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:30:17-77
+39-->C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:30:27-74
+40            </intent-filter>
+41        </activity>
+42    </application>
+43
+44</manifest>

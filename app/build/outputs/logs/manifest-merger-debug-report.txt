@@ -1,0 +1,226 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:2:1-35:12
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\09884e4f09dcb45cba6db7aeffefa6be\material-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\72755d8593c3ca1ed00b11907b10c688\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\65c09879886c04dd03c37ecd65c89ae1\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\742bd646b7ae1b6876b949d77ebc2765\jetified-volley-1.1.1\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\5b4940cfd8e6b027ab48147c86d677f1\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\ee402462607e3d7bc40e1166a58a6978\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.bumptech.glide:glide:4.11.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\c848c62bfcae3f04351f6536eae6ec04\jetified-glide-4.11.0\AndroidManifest.xml:2:1-12:12
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\f6a20730590ab62e2149b3f2118fc4f7\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\b04599de2daa334d543a60c24c9af47d\jetified-appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\709dec39ab4d41e4eaebf9d7dbe74e41\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\93fa951bb50245f79bfdb3046a233a07\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\85ca3f2cc7fc2d3a231f6bc7d430904f\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\4339a1db68a86092531ac27a7672e57d\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\21e18b66e86534a7ba2f091590864e61\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\ec2ff2d2f35f5ce21d8f3a2cd566b74c\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\faf6750b30e085dada05d5bf2b630089\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\33987a6c2abb97d3a5dc8363aa39ad35\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\778008f0324b525fd9b227724bac745f\jetified-activity-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\f961a727fd6ff1bec6d760c391cc6822\core-1.1.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\fd87986aa651fe7c3128c0b95293c012\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\9e025505c94c04007a8190f74982d1e9\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.11.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\cc22061029568e927a90b39fd84bc307\jetified-gifdecoder-4.11.0\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\448ad5636d84a77758d1f5390643618a\exifinterface-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\69ad70deb7fc3872e7a51cd7de424a87\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\8afb13b33fd0950ef40834a78e555523\lifecycle-runtime-2.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\058a364b06d9011467e5efaaa1ab266f\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\ffd0aa10f2a787335b333d5b793ff3d9\jetified-savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\c7e64f6181ef9b2b223b47bd6635a3b3\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\dcf4af4213d59bd5fe489359c2b51b96\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\e5f4ab83b7154d8dd7689c213d4008f9\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\3ad98f043f0e278e1b4f445317842885\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:2:1-35:12
+	package
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:3:5-40
+		INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:2:1-35:12
+		INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:2:1-35:12
+		INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:5:22-64
+application
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:7:5-33:19
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\09884e4f09dcb45cba6db7aeffefa6be\material-1.1.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\09884e4f09dcb45cba6db7aeffefa6be\material-1.1.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\65c09879886c04dd03c37ecd65c89ae1\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\65c09879886c04dd03c37ecd65c89ae1\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\742bd646b7ae1b6876b949d77ebc2765\jetified-volley-1.1.1\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\742bd646b7ae1b6876b949d77ebc2765\jetified-volley-1.1.1\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:glide:4.11.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\c848c62bfcae3f04351f6536eae6ec04\jetified-glide-4.11.0\AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.11.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\c848c62bfcae3f04351f6536eae6ec04\jetified-glide-4.11.0\AndroidManifest.xml:10:5-20
+MERGED from [androidx.core:core:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\f961a727fd6ff1bec6d760c391cc6822\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\f961a727fd6ff1bec6d760c391cc6822\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [com.github.bumptech.glide:gifdecoder:4.11.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\cc22061029568e927a90b39fd84bc307\jetified-gifdecoder-4.11.0\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.11.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\cc22061029568e927a90b39fd84bc307\jetified-gifdecoder-4.11.0\AndroidManifest.xml:9:5-20
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\69ad70deb7fc3872e7a51cd7de424a87\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\69ad70deb7fc3872e7a51cd7de424a87\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\f961a727fd6ff1bec6d760c391cc6822\core-1.1.0\AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:12:9-35
+	android:label
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:10:9-41
+	android:roundIcon
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:11:9-54
+	android:icon
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:9:9-43
+	android:allowBackup
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:8:9-35
+	android:theme
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:13:9-40
+activity#com.example.SeccionMedico.InfoPersonalMedico
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:14:9-90
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:14:19-78
+activity#com.example.SeccionMedico.Ars
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:15:9-66
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:15:19-63
+activity#com.example.SeccionMedico.Especialidad
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:16:9-75
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:16:19-72
+activity#com.example.SeccionMedico.RegistroMedico
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:17:9-77
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:17:19-74
+activity#com.example.SeccionMedico.DashboardMedico
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:18:9-78
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:18:19-75
+activity#com.example.SeccionMedico.MedicoLogin
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:19:9-74
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:19:19-71
+activity#com.example.SeccionPaciente.CambiarContrasena
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:20:9-82
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:20:19-79
+activity#com.example.SeccionPaciente.InformacionPersonal
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:21:9-84
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:21:19-81
+activity#com.example.SeccionPaciente.HistorialCitas
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:22:9-79
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:22:19-76
+activity#com.example.SeccionPaciente.RegistroPaciente
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:23:9-81
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:23:19-78
+activity#com.example.SeccionPaciente.PacienteLogin
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:24:9-78
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:24:19-75
+activity#com.example.MainActivity
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:25:9-61
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:25:19-58
+activity#com.example.PreLogin
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:26:9-32:20
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:26:19-54
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:27:13-31:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:28:17-69
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:28:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:30:17-77
+	android:name
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml:30:27-74
+uses-sdk
+INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\09884e4f09dcb45cba6db7aeffefa6be\material-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\09884e4f09dcb45cba6db7aeffefa6be\material-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\72755d8593c3ca1ed00b11907b10c688\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\72755d8593c3ca1ed00b11907b10c688\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\65c09879886c04dd03c37ecd65c89ae1\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\65c09879886c04dd03c37ecd65c89ae1\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\742bd646b7ae1b6876b949d77ebc2765\jetified-volley-1.1.1\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\742bd646b7ae1b6876b949d77ebc2765\jetified-volley-1.1.1\AndroidManifest.xml:7:5-43
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\5b4940cfd8e6b027ab48147c86d677f1\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\5b4940cfd8e6b027ab48147c86d677f1\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\ee402462607e3d7bc40e1166a58a6978\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\ee402462607e3d7bc40e1166a58a6978\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.bumptech.glide:glide:4.11.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\c848c62bfcae3f04351f6536eae6ec04\jetified-glide-4.11.0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.11.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\c848c62bfcae3f04351f6536eae6ec04\jetified-glide-4.11.0\AndroidManifest.xml:6:5-8:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\f6a20730590ab62e2149b3f2118fc4f7\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\f6a20730590ab62e2149b3f2118fc4f7\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\b04599de2daa334d543a60c24c9af47d\jetified-appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\b04599de2daa334d543a60c24c9af47d\jetified-appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\709dec39ab4d41e4eaebf9d7dbe74e41\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\709dec39ab4d41e4eaebf9d7dbe74e41\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\93fa951bb50245f79bfdb3046a233a07\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\93fa951bb50245f79bfdb3046a233a07\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\85ca3f2cc7fc2d3a231f6bc7d430904f\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\85ca3f2cc7fc2d3a231f6bc7d430904f\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\4339a1db68a86092531ac27a7672e57d\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\4339a1db68a86092531ac27a7672e57d\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\21e18b66e86534a7ba2f091590864e61\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\21e18b66e86534a7ba2f091590864e61\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\ec2ff2d2f35f5ce21d8f3a2cd566b74c\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\ec2ff2d2f35f5ce21d8f3a2cd566b74c\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\faf6750b30e085dada05d5bf2b630089\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\faf6750b30e085dada05d5bf2b630089\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\33987a6c2abb97d3a5dc8363aa39ad35\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\33987a6c2abb97d3a5dc8363aa39ad35\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\778008f0324b525fd9b227724bac745f\jetified-activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\778008f0324b525fd9b227724bac745f\jetified-activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\f961a727fd6ff1bec6d760c391cc6822\core-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\f961a727fd6ff1bec6d760c391cc6822\core-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\fd87986aa651fe7c3128c0b95293c012\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\fd87986aa651fe7c3128c0b95293c012\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\9e025505c94c04007a8190f74982d1e9\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\9e025505c94c04007a8190f74982d1e9\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.11.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\cc22061029568e927a90b39fd84bc307\jetified-gifdecoder-4.11.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.11.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\cc22061029568e927a90b39fd84bc307\jetified-gifdecoder-4.11.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\448ad5636d84a77758d1f5390643618a\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\448ad5636d84a77758d1f5390643618a\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\69ad70deb7fc3872e7a51cd7de424a87\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\69ad70deb7fc3872e7a51cd7de424a87\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\8afb13b33fd0950ef40834a78e555523\lifecycle-runtime-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\8afb13b33fd0950ef40834a78e555523\lifecycle-runtime-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\058a364b06d9011467e5efaaa1ab266f\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\058a364b06d9011467e5efaaa1ab266f\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\ffd0aa10f2a787335b333d5b793ff3d9\jetified-savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\ffd0aa10f2a787335b333d5b793ff3d9\jetified-savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\c7e64f6181ef9b2b223b47bd6635a3b3\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\c7e64f6181ef9b2b223b47bd6635a3b3\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\dcf4af4213d59bd5fe489359c2b51b96\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\dcf4af4213d59bd5fe489359c2b51b96\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\e5f4ab83b7154d8dd7689c213d4008f9\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\e5f4ab83b7154d8dd7689c213d4008f9\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\3ad98f043f0e278e1b4f445317842885\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\tejad\.gradle\caches\transforms-2\files-2.1\3ad98f043f0e278e1b4f445317842885\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\tejad\OneDrive\Escritorio\proyecto_final\proyectoFinal\app\src\main\AndroidManifest.xml

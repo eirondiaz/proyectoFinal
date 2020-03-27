@@ -1,0 +1,218 @@
+[33mcommit df1a877a15b75c5bdefdb6ebf11aa2314478b409[m[33m ([m[1;36mHEAD -> [m[1;32mBuscarMedico[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: gabrielDox <sr.gabrielgil@gmail.com>
+Date:   Wed Mar 25 00:21:11 2020 -0400
+
+    Login medico funcional
+
+[33mcommit b9caa70b088ca7c653ddf58d6169f6be18c42779[m
+Author: gabrielDox <sr.gabrielgil@gmail.com>
+Date:   Wed Mar 25 00:16:36 2020 -0400
+
+    Login medico funcional
+
+[33mcommit 1bc4e96e0dfdf600f4aa6900d2616b243e154cc1[m
+Author: gabrielDox <sr.gabrielgil@gmail.com>
+Date:   Tue Mar 24 23:23:27 2020 -0400
+
+    finalizando el login
+
+[33mcommit c4145c6e3b89795d9212e4462e2577c4ad0d1478[m
+Author: gabrielDox <sr.gabrielgil@gmail.com>
+Date:   Tue Mar 24 23:04:10 2020 -0400
+
+    login inicio
+
+[33mcommit 92cb918e9d6e1ba43990d699ddd5891887f47c7c[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sun Mar 22 14:45:40 2020 -0400
+
+    /build eliminado
+
+[33mcommit afdc1920e331fe347fd5a57277e625ed7a9c0cf1[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sun Mar 22 14:42:28 2020 -0400
+
+    commit 2.0
+
+[33mcommit 1b9c593af870a327bae5753885fcb148a31b93d6[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Mon Mar 23 22:48:29 2020 -0400
+
+    sin firebase
+
+[33mcommit 528eff0f98befacecca0c14a498a1931ebab6d87[m
+Author: Gabriel Geronimo <55813759+Gabriel1720@users.noreply.github.com>
+Date:   Sun Mar 22 11:47:14 2020 -0400
+
+    Delete .gitignore
+    
+    Necesito las dependencias y esto ignora el documento gradle el cual tienen las dependencias de google para usar el firebase
+
+[33mcommit 5f6cff3b7c721b76000198d0a73312712a552ef1[m
+Merge: 8933ecd f9f4de2
+Author: gabrielDox <sr.gabrielgil@gmail.com>
+Date:   Sun Mar 22 11:13:24 2020 -0400
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 8933ecd62e26fc402dc78f78580029721880b6f0[m
+Author: gabrielDox <sr.gabrielgil@gmail.com>
+Date:   Sun Mar 22 10:47:34 2020 -0400
+
+    Creacion del usuario y paciente
+
+[33mcommit 8f9e988320876b8969d39e52cc6a57672eb0d07b[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sun Mar 22 10:53:05 2020 -0400
+
+    FireBase
+
+[33mcommit f9f4de2ff0cc4ba57c617158a8c11859ca29129f[m
+Author: gabrielDox <sr.gabrielgil@gmail.com>
+Date:   Sun Mar 22 10:47:34 2020 -0400
+
+    Creacion del usuario y paciente
+
+[33mcommit 7cb068519e2a9f1064fa4d2eed1bd12d7171a1c9[m
+Author: oscarmora26 <oscarrander26>
+Date:   Tue Mar 17 01:09:44 2020 -0400
+
+    LoginMedico
+
+[33mcommit d8fa346949c1c449fbd3ddfc47e690456010b3f7[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Tue Mar 17 01:01:09 2020 -0400
+
+    creacion de activities
+
+[33mcommit e5b19364fe0fb6d207e4755ed8c5e1561fcdd087[m
+Merge: ebd45a9 f2c7a14
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Tue Mar 17 00:58:06 2020 -0400
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       app/src/main/AndroidManifest.xml
+    #       app/src/main/java/com/example/MedicoLogin.java
+    #       app/src/main/res/layout/activity_medico_login.xml
+
+[33mcommit ebd45a93f08df58d1fa6414c13f4a3dd10e62a5f[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Tue Mar 17 00:52:21 2020 -0400
+
+    creacion de activities
+
+[33mcommit f2c7a14abc8687276038dc66378f2bb68d08faaf[m
+Author: oscarmora26 <oscarrander26>
+Date:   Tue Mar 17 00:51:18 2020 -0400
+
+    creacion activity MedicoLogin
+
+[33mcommit 36c8149b914fb9b8c5320c54250c17d13114909b[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Thu Mar 12 01:17:09 2020 -0400
+
+    mi ultima update
+
+[33mcommit a0f1a3afca83a466d5708d87ea26a0997e78344f[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sun Mar 8 02:55:13 2020 -0400
+
+    a
+
+[33mcommit 0e9d549b7810dd410b93467483e0f544635a30f3[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sat Mar 7 20:19:35 2020 -0400
+
+    Agregue varios activities de el perfil del usuario
+
+[33mcommit cc35eea269fd563cd71520afc0787a099393dbcf[m
+Author: Daniel <tejadadaniel@gmail.com>
+Date:   Sat Mar 7 19:07:21 2020 -0400
+
+    Commit de prueba
+
+[33mcommit fac053695e537fc6682086289b41dd8593033713[m
+Author: oscarmora26 <oscarrander26>
+Date:   Sat Mar 7 18:29:25 2020 -0400
+
+    Primer commit oscar
+
+[33mcommit 7c2eb99e7ef27b997fc337a88369a33836add4d4[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sat Mar 7 18:09:35 2020 -0400
+
+    diseño del Registro de paciente
+
+[33mcommit 42f9dcf10c6ccc4a8a17d17664230ea21fc4e707[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sat Mar 7 16:53:03 2020 -0400
+
+    rediseño del perfil
+
+[33mcommit c7c212b577108409a3e98ab664fc9eaae364552e[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sat Mar 7 16:32:59 2020 -0400
+
+    aaaaaaa
+
+[33mcommit 40e73e867181ab3e90766cbba2dc7f0e9989f084[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sat Mar 7 16:09:50 2020 -0400
+
+    edicion del perfil
+
+[33mcommit 989869b4d9bf2f4640312fe6ff0e66897464843b[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sat Mar 7 15:51:56 2020 -0400
+
+    muuuuchas modificaciones :))
+
+[33mcommit 0fb676aa1ac7fa592a63d9a8f9546621cf2b7883[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sat Mar 7 13:49:08 2020 -0400
+
+    diseño del perfil
+
+[33mcommit 29fb6fd52f5d118615a5a211a75b1d0993cf5418[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sat Mar 7 13:19:27 2020 -0400
+
+    modificando LogIn
+
+[33mcommit cea8561ff72cae3b6ebfce0711a2a64669ed0bcf[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sat Mar 7 13:05:41 2020 -0400
+
+    diseño en el LogIn
+
+[33mcommit 6c24eb0ad4aeceef0b53734a6eeac333e31ce109[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sat Mar 7 11:52:17 2020 -0400
+
+    diseñando
+
+[33mcommit eae94172bebc9a425cb12196fde521e1acf7803a[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sat Mar 7 11:36:11 2020 -0400
+
+    diseño en el medicologin y pacientelogin
+
+[33mcommit a3292f12acb00dd9328a6e475821267e45c7e566[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sat Mar 7 11:12:21 2020 -0400
+
+    cree los activities PacienteLogin y MedicoLogin
+
+[33mcommit 4dda3becc3f555e3facb24afc004ec5519476db9[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sat Mar 7 11:03:19 2020 -0400
+
+    prueba
+
+[33mcommit e022b4416e3f69238526707609880fa90d67a0dd[m
+Author: Eiron <eirondiaz@gmail.com>
+Date:   Sat Mar 7 11:00:43 2020 -0400
+
+    creacion del proyecto
