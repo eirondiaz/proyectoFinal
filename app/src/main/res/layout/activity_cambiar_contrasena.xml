@@ -10,71 +10,98 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:orientation="vertical">
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            android:layout_marginTop="100dp">
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_gradientepink"
+            android:gravity="center_vertical">
 
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:padding="20dp">
+                android:layout_height="wrap_content"
+                android:text="Cambiar contraseña"
+                android:textColor="#fff"
+                android:textSize="25sp"
+                android:fontFamily="@font/roboto_light"
+                android:textStyle="bold"
+                android:gravity="center"/>
 
-                <EditText
-                    android:id="@+id/editText_pass_actual"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint="Contraseña actual"
-                    android:layout_marginTop="30dp"
-                    android:background="@drawable/bg_edtxt"
-                    android:padding="10dp"
-                    android:textColor="@color/colorPrimary2"/>
+        </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText_pass_new"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint="Nueva contraseña"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/bg_edtxt"
-                    android:padding="10dp"
-                    android:textColor="@color/colorPrimary2"/>
-
-                <EditText
-                    android:id="@+id/editText_pass_confirm"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/bg_edtxt"
-                    android:ems="10"
-                    android:hint="Confirmar contraseña"
-                    android:inputType="textPersonName"
-                    android:padding="10dp"
-                    android:textColor="@color/colorPrimary2" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <Button
-            android:id="@+id/btn_cambiar_pass"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cambiar contraseña"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/bg_btn"
-            android:textColor="#fff"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="20dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="70dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <EditText
+                        android:id="@+id/editText_pass_actual"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPassword"
+                        android:hint="Contraseña actual"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/bg_edtxt"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary2"/>
+
+                    <EditText
+                        android:id="@+id/editText_pass_new"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:hint="Nueva contraseña"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/bg_edtxt"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary2"/>
+
+                    <EditText
+                        android:id="@+id/editText_pass_confirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/bg_edtxt"
+                        android:ems="10"
+                        android:hint="Confirmar contraseña"
+                        android:inputType="textPersonName"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary2" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btn_cambiar_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cambiar contraseña"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/bg_btn"
+                android:textColor="#fff"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
