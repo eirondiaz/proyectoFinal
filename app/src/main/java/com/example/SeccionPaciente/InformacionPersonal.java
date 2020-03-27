@@ -33,7 +33,7 @@ public class InformacionPersonal extends AppCompatActivity implements View.OnCli
     private EditText edNombre, edApellido, edTelefono, edCorreo;
     private TextView tvMainNombre;
     private Button btnLogOut, btnEditar;
-    private String idPaciente, nombre, apellido, telefono;
+    private String idPaciente, nombre, apellido, telefono, correo;
     boolean editMode = true;
 
     private RequestQueue request;
@@ -76,14 +76,14 @@ public class InformacionPersonal extends AppCompatActivity implements View.OnCli
         nombre = edNombre.getText().toString();
         apellido = edApellido.getText().toString();
         telefono = edTelefono.getText().toString();
-        String correo = edCorreo.getText().toString();
+        correo = edCorreo.getText().toString();
 
         if (nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty() || correo.isEmpty()) {
             Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
         }
         else{
 
-            String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONEditarPaciente.php?nombre=" + nombre + "&apellido=" + apellido + "&telefono=" + telefono + "&id=" + idPaciente;
+            String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONEditarPaciente.php?nombre=" + nombre + "&apellido=" + apellido + "&telefono=" + telefono + "&correo=" + correo + "&id=" + idPaciente;
 
             url = url.replace(" ", "%20");
 
@@ -101,6 +101,7 @@ public class InformacionPersonal extends AppCompatActivity implements View.OnCli
         editor.putString("nombre", nombre);
         editor.putString("apellido", apellido);
         editor.putString("telefono", telefono);
+        editor.putString("email", correo);
         editor.commit();
     }
 
@@ -165,8 +166,9 @@ public class InformacionPersonal extends AppCompatActivity implements View.OnCli
             String nombre = edNombre.getText().toString();
             String apellido = edApellido.getText().toString();
             String telefono = edTelefono.getText().toString();
+            String correo = edCorreo.getText().toString();
 
-            if (nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty()){
+            if (nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty() || correo.isEmpty()){
                 Toast.makeText(this, "No puedes dejar campos vacios", Toast.LENGTH_SHORT).show();
             }
             else{
