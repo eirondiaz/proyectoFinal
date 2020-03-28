@@ -5,6 +5,7 @@
     <color name="colorPrimary2">#FE7182</color>
     <color name="colorPrimary22">#1FC7C8</color>
     <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorTexBlack">#000000</color>
     <color name="colorAccent">#D81B60</color>
     <color name="backGround_color">#FBD6E7</color>
     <color name="backGround_color1">#E3FEF7</color>

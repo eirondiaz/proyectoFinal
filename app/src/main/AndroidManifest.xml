@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.AcercaDe"></activity>
+        <activity android:name="com.example.AgendarCita"></activity>
+        <activity android:name="com.example.AcercaDe" />
         <activity android:name="com.example.SeccionMedico.InfoPersonalMedico" />
         <activity android:name="com.example.SeccionMedico.Ars" />
         <activity android:name="com.example.SeccionMedico.Especialidad" />

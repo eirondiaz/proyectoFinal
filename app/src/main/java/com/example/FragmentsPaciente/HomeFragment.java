@@ -18,6 +18,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.AcercaDe;
+import com.example.AgendarCita;
 import com.example.MainActivity;
 import com.example.SeccionPaciente.InformacionPersonal;
 import com.example.proyectofinal.R;
@@ -26,7 +27,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
     private TextView tvNombre;
     private CardView cardViewTexto;
-    private LinearLayout lvAcercaDe;
+    private LinearLayout lvAcercaDe, lyAgendar;
 
     @Nullable
     @Override
@@ -50,6 +51,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         lvAcercaDe = view.findViewById(R.id.lvAcercaDe);
         lvAcercaDe.setOnClickListener(this);
 
+        lyAgendar = view.findViewById(R.id.lyAgendar);
+        lyAgendar.setOnClickListener(this);
+
         return view;
     }
 
@@ -59,7 +63,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         switch (v.getId()){
 
             case R.id.lvAcercaDe:
-                    startActivity(new Intent(getContext(), AcercaDe.class));
+                startActivity(new Intent(getContext(), AcercaDe.class));
+                break;
+            case R.id.lyAgendar:
+                startActivity(new Intent(getContext(), AgendarCita.class));
                 break;
         }
     }
