@@ -7,106 +7,117 @@
     tools:context="com.example.SeccionMedico.MedicoLogin">
 
 
-            <RelativeLayout
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_gradientepink">
+
+            <LinearLayout
+                android:id="@+id/topLy"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/bg_gradientepink"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_chevron_left_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Iniciar Sesión"
+                    android:textColor="#fff"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/bg_gradientepink">
+                android:layout_below="@id/topLy"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/bg_lybottonlogin"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="20dp">
 
-                <LinearLayout
-                    android:id="@+id/topLy"
+
+                <EditText
+                    android:id="@+id/edEmail"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:orientation="vertical"
-                    android:background="@drawable/bg_gradientepink">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/bg_edtxt"
+                    android:ems="10"
+                    android:hint="Email"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:textColor="@color/colorPrimary" />
 
-                    <ImageView
-                        android:id="@+id/imgBack"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_chevron_left_black_24dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="5dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Iniciar Sesión"
-                        android:textColor="#fff"
-                        android:fontFamily="@font/roboto_light"
-                        android:textStyle="bold"
-                        android:textSize="40sp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"/>
-
-                </LinearLayout>
-
-                <LinearLayout
+                <EditText
+                    android:id="@+id/edContraseña"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center_horizontal"
-                    android:padding="20dp"
-                    android:layout_below="@id/topLy"
-                    android:background="@drawable/bg_lybottonlogin">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_edtxt"
+                    android:ems="10"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"
+                    android:padding="12dp"
+                    android:textColor="@color/colorPrimary2" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="7dp"
+                    android:text="Olvidaste tu contraseña?"
+                    android:textColor="@color/colorPrimary2"
+                    android:textSize="17sp" />
 
-                    <EditText
-                        android:id="@+id/edEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:layout_marginTop="40dp"
-                        android:hint="Email"
-                        android:textColor="@color/colorPrimary"
-                        android:background="@drawable/bg_edtxt"
-                        android:padding="12dp"/>
+                <Button
+                    android:id="@+id/btnLogIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/bg_btnregistro"
+                    android:fontFamily="@font/roboto"
+                    android:text="Iniciar Sesión"
+                    android:textColor="@color/colorPrimary2"
+                    android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/edContraseña"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPassword"
-                        android:hint="Contraseña"
-                        android:textColor="@color/colorPrimary2"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/bg_edtxt"
-                        android:padding="12dp"/>
+                <Button
+                    android:id="@+id/btnRegistro"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_btn"
+                    android:fontFamily="@font/roboto"
+                    android:text="Registrate"
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Olvidaste tu contraseña?"
-                        android:textColor="@color/colorPrimary2"
-                        android:layout_marginTop="7dp"
-                        android:textSize="17sp"
-                        android:layout_gravity="end"/>
+            </LinearLayout>
+        </RelativeLayout>
 
-                    <Button
-                        android:id="@+id/btnLogIn"
-                        android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:text="Iniciar Sesión"
-                        android:fontFamily="@font/roboto"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorPrimary2"
-                        android:background="@drawable/bg_btnregistro"
-                        android:layout_marginTop="40dp"/>
-
-                    <Button
-                        android:id="@+id/btnRegistro"
-                        android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:text="Registrate"
-                        android:fontFamily="@font/roboto"
-                        android:textStyle="bold"
-                        android:textColor="#fff"
-                        android:background="@drawable/bg_btn"
-                        android:layout_marginTop="10dp"/>
-
-                </LinearLayout>
-
-            </RelativeLayout>
-
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

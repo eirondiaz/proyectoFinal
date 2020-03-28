@@ -2,11 +2,14 @@ package com.example.SeccionMedico;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -19,6 +22,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.Usuarios.Medico;
 import com.example.proyectofinal.R;
 
@@ -31,8 +35,7 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
     private Spinner spSexo, spEspecialidad, spARS, spClinica;
     private Button btnRegistrar, btnFecha;
     private EditText edNombre, edApellido, edTelefono, edEmail, edContraseña, edRepContra, edExequatur;
-    private String nombre, apellido , email, contraseña, repcontraseña, fecha, sexo, especialidad, ars, hospital;
-    private  int exequatur,  telefono ;
+    private String nombre, apellido , email, contraseña, repcontraseña, fecha, sexo, especialidad, ars, hospital , exequatur,  telefono ;
     private ProgressDialog progressDialog;
     private RequestQueue requestQueue;
     private  JsonObjectRequest jsonObjectRequest;
@@ -40,7 +43,15 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
     private String[] sexoList = new String[]{"Masculino", "Femenino"};
 
     private String[] especialidadList = new String[]
-            {"Especialidad", "Anestesiología", "Alergología", "Cardiología", "Gastroenterología", "Geriatría", "Endocrinología"};
+            {"ANATOMÍA PATOLÓGICA","ANESTESIOLOGÍA", "ANGIOLOGÍA GENERAL y HEMODINAMIA" , "CARDIOLOGÍA" , "CARDIÓLOGO INFANTIL" , "CIRUGÍA GENERAL" ,
+                    "CIRUGÍA CARDIOVASCULAR" , "CIRUGÍA DE CABEZA Y CUELLO" , "CIRUGÍA DE TÓRAX (CIRUGÍA TORÁCICA)" , "CIRUGÍA INFANTIL (CIRUGÍA PEDIÁTRICA)" ,
+                    "CIRUGÍA PLÁSTICA Y REPARADORA" , "CIRUGÍA VASCULAR PERIFÉRICA" , "CLÍNICA MÉDICA", "COLOPROCTOLOGÍA", "DERMATOLOGÍA", "DIAGNOSTICO POR IMÁGENES",
+                    "ENDOCRINOLOGÍA", "ENDOCRINÓLOGO INFANTIL", "FARMACOLOGÍA CLÍNICA", "FISIATRÍA (MEDICINA FÍSICA Y REHABILITACIÓN)", "GASTROENTEROLOGÍA",
+                    "GASTROENTERÓLOGO INFANTIL", "GASTROENTERÓLOGO INFANTIL", "GERIATRÍA", "GINECOLOGÍA", "HEMATOLOGÍA", "HEMATÓLOGO INFANTIL", "HEMOTERAPIA E INMUNOHEMATOLOGÍA", "INFECTOLOGÍA",
+                    "INFECTÓLOGO INFANTIL", "MEDICINA DEL DEPORTE", "MEDICINA GENERAL y/o MEDICINA DE FAMILIA", "MEDICINA LEGAL", "MEDICINA NUCLEAR", "MEDICINA DEL TRABAJO",
+                    "NEFROLOGÍA", "NEFRÓLOGO INFANTIL", "NEONATOLOGÍA", "NEUMONOLOGÍA", "NEUMONÓLOGO INFANTIL", "NEUROCIRUGÍA", "NEUROLOGÍA", "NEURÓLOGO INFANTIL", "NUTRICIÓN", "OBSTETRICIA",
+                    "OFTALMOLOGÍA", "ONCOLOGÍA", "ONCÓLOGO INFANTIL", "ORTOPEDIA Y TRAUMATOLOGÍA", "OTORRINOLARINGOLOGÍA", "PEDIATRÍA", "PSIQUIATRÍA", "PSIQUIATRÍA INFANTO JUVENIL",
+                    "RADIOTERAPIA O TERAPIA RADIANTE", "REUMATOLOGÍA", "REUMATÓLOGO INFANTIL", "TERAPIA INTENSIVA", "TERAPISTA INTENSIVO INFANTIL", "TOCOGINECOLOGÍA", "TOXICOLOGÍA", "UROLOGÍA"};
 
     private String[] ARSList = new String[]
             {"No tengo seguro", "ARS Universal", "ARS Palic Salud"};
@@ -53,6 +64,8 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_medico);
+
+        requestQueue = Volley.newRequestQueue(getApplicationContext()); 
 
         edNombre = findViewById(R.id.edNombre);
         edApellido = findViewById(R.id.edApellido);
@@ -70,15 +83,59 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
 
         spSexo = findViewById(R.id.spSexo);
         spSexo.setAdapter(new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, sexoList));
+        spSexo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                sexo = sexoList[position] ;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         spEspecialidad = findViewById(R.id.spEspecialidad);
         spEspecialidad.setAdapter(new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, especialidadList));
+        spEspecialidad.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                especialidad = especialidadList[position] ;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         spARS = findViewById(R.id.spARS);
         spARS.setAdapter(new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, ARSList));
+        spARS.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ars = ARSList[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         spClinica = findViewById(R.id.spClinica);
         spClinica.setAdapter(new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, clinicaList));
+        spClinica.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                hospital = clinicaList[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     @Override
@@ -86,7 +143,7 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()){
 
             case R.id.btnRegistrar:
-
+                cargarServer() ;
                 break;
             case R.id.fecha:
                 getDate();
@@ -104,7 +161,13 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
         DatePickerDialog datepicker = new DatePickerDialog(RegistroMedico.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                btnFecha.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
+               if(dayOfMonth < 10 ){
+                   btnFecha.setText(dayOfMonth + "-0" + (month + 1) + "-" + year);
+               }
+
+               else{
+                   btnFecha.setText(dayOfMonth + "-" + (month + 1) + "-" + year);
+               }
             }
         } , dia, mes, ano);
         datepicker.getDatePicker().setMinDate(System.currentTimeMillis());
@@ -114,47 +177,75 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onResponse(JSONObject response) {
-
+                 progressDialog.hide();
     }
 
     @Override
     public void onErrorResponse(VolleyError error) {
+        progressDialog.hide();
 
+        AlertDialog.Builder alerta = new AlertDialog.Builder(this) ;
+        alerta.setTitle("Aviso!");
+        alerta.setMessage("Acaba de ocurrir un error");
+        alerta.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        }) ;
+
+        alerta.create().show();
     }
-
-
-
 
     public void cargarServer() {
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Registrando usuario...");
-        progressDialog.show();
-    //    edNombre, edApellido, edTelefono, edEmail, edContraseña, edRepContra, edExequatur;
-     // nombre, apellido , email, contraseña, repcontraseña, fecha, sexo, especialidad, ars, hospital;
-     //   exequatur,  telefono ;
 
-         nombre = edNombre.getText().toString();
-         apellido = edApellido.getText().toString();
-         telefono =Integer.getInteger(edTelefono.getText().toString());
-         email = edEmail.getText().toString();
-         contraseña = edContraseña.getText().toString();
-         repcontraseña = edRepContra.getText().toString();
-         fecha = btnFecha.getText().toString();
-         sexo = spSexo.getSelectedItem().toString();
-         exequatur = Integer.getInteger(edExequatur.getText().toString());
-         especialidad = especialidadList[spARS.getSelectedItemPosition()];
-          ars = ARSList [spARS.getSelectedItemPosition()];
-          hospital = clinicaList[spClinica.getSelectedItemPosition()];
+        nombre = edNombre.getText().toString();
+        apellido = edApellido.getText().toString();
+        telefono = edTelefono.getText().toString();
+        email = edEmail.getText().toString();
+        contraseña = edContraseña.getText().toString();
+        repcontraseña = edRepContra.getText().toString();
+        fecha = btnFecha.getText().toString().equals("Fecha de nacimiento") ? "2020-28-3" : btnFecha.getText().toString() ;
+        exequatur = edExequatur.getText().toString();
 
 
-        String url = "\n" +
-                "https://proyectofinalprog2.000webhostapp.com/registroMedico.php?nombre=%22"+nombre+"%22&apellido=%22"+apellido+"%22" +
-                "&telefono="+telefono+"&correo=%22"+email+"%22&pass=%22"+contraseña+"%22&sexo=%22"+sexo+"%22&fecha=%27"+fecha+"%27" +
-                "&exequatur="+exequatur+"&especialida=%22"+especialidad+"%22&hospital=%22d"+hospital+"%22&seguro=%22"+ars+"%22";
+        //   Toast.makeText(getApplicationContext(), nombre + " " + apellido +  " "   + fecha + " " + sexo, Toast.LENGTH_LONG).show();
+
+        if (nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty() || email.isEmpty() || contraseña.isEmpty() || fecha.isEmpty() || exequatur.isEmpty() || sexo.isEmpty() || hospital.isEmpty() || ars.isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Algunos campos estan vacios", Toast.LENGTH_SHORT).show();
+
+        } else {
+
+            if (contraseña.equals(repcontraseña)) {
+                progressDialog.show();
+
+                String url = "https://proyectofinalprog2.000webhostapp.com/registroMedico.php?nombre=%22" + nombre + "%22&apellido=%22" + apellido + "%22" +
+                        "&telefono=" + telefono + "&correo=%22" + email + "%22&pass=%22" + contraseña + "%22&sexo=%22" + sexo + "%22&fecha=%27" + fecha + "%27" +
+                        "&exequatur=" + exequatur + "&especialida=%22" + especialidad + "%22&hospital=%22" + hospital + "%22&seguro=%22" + ars + "%22";
+
+                JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
+                requestQueue.add(request);
 
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url , null, this , this );
-        requestQueue.add(request);
+            }
+            else {
+                AlertDialog.Builder alerta = new AlertDialog.Builder(this) ;
+                alerta.setTitle("Aviso!");
+                alerta.setMessage("Las contraseña no son iguales");
+                alerta.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }) ;
+
+                alerta.create().show();
+            }
+
+        }
+
+
+        }
     }
-
-}
