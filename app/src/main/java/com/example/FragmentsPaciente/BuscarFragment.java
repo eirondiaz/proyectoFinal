@@ -1,9 +1,11 @@
 package com.example.FragmentsPaciente;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,15 +13,32 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.SeccionCitaMedica.RecylclerViewAdapter;
 import com.example.Usuarios.Medico;
+import com.example.Usuarios.Usuario;
+import com.example.Usuarios.UsuarioFactory;
 import com.example.proyectofinal.R;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class BuscarFragment extends Fragment {
+public class BuscarFragment extends Fragment implements Response.Listener<JSONObject>, Response.ErrorListener{
 
     RecyclerView recyclerViewMedicos;
+    private ArrayList<Medico> medicos;
+    ProgressDialog dialog;
+
+    private RequestQueue request;
+    JsonObjectRequest jsonObjectRequest;
 
     @Nullable
     @Override
@@ -27,12 +46,69 @@ public class BuscarFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_buscar, container, false);
 
         //Solo de ejemplo
-        getListMedicos();
+        //getListMedicos();
         recyclerViewMedicos = view.findViewById(R.id.RecylerListMedicos);
-        RecylclerViewAdapter adapter = new RecylclerViewAdapter(getListMedicos());
-        recyclerViewMedicos.setAdapter(adapter);
+        //RecylclerViewAdapter adapter = new RecylclerViewAdapter(getListMedicos());
+        //recyclerViewMedicos.setAdapter(adapter);
         recyclerViewMedicos.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        request = Volley.newRequestQueue(getContext());
+
+        CargarWebService();
+
+        medicos = new ArrayList<>();
         return view;
+    }
+
+    public void CargarWebService(){
+
+        ////dialog = new ProgressDialog(getContext());
+        //dialog.setMessage("Consultando lista de medicos...");
+        //dialog.setCanceledOnTouchOutside(false);
+        //dialog.show();
+
+        String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONConsultarListaMedicos.php";
+
+        url = url.replace(" ", "%20");
+
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
+        request.add(jsonObjectRequest);
+    }
+
+    @Override
+    public void onResponse(JSONObject response) {
+        Medico medico;
+
+        JSONArray json = response.optJSONArray("medico");
+
+        try {
+            for (int i = 0; i < json.length(); i++){
+                medico = new Medico();
+                JSONObject jsonObject = null;
+                jsonObject = json.getJSONObject(i);
+
+                medico.setNombre(jsonObject.getString("Nombres"));
+                medico.setEspecialidad("Neurologo");
+                medico.setHospital("Hospital " + i);
+                medico.setFoto(R.drawable.medico1);
+
+                medicos.add(medico);
+            }
+            //dialog.dismiss();
+            RecylclerViewAdapter adapter = new RecylclerViewAdapter(medicos);
+            recyclerViewMedicos.setAdapter(adapter);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            //dialog.dismiss();
+            Toast.makeText(getContext(), "No se ha podido establecer conexion con el servidor", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        Toast.makeText(getContext(), "No existe medicos registrados", Toast.LENGTH_SHORT).show();
+        //dialog.dismiss();
     }
 
     //Ejemplo de como se llenara la lista de los medicos
@@ -41,6 +117,7 @@ public class BuscarFragment extends Fragment {
         //las imagens son de prueba, las pueden borrar
         medicos.add(new Medico("Daniel Tejada Montero","Medico General","El Morgan",R.drawable.medico1));
         medicos.add(new Medico("Andres Guzman","Medico General","Hospital San Antonio",R.drawable.medico2));
+        medicos.add(new Medico("Eiron Diaz","Medico General","Hospital San Antonio",R.drawable.medico2));
         return medicos;
     }
 }
