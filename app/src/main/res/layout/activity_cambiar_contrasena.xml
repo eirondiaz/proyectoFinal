@@ -68,7 +68,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="textPersonName"
+                        android:inputType="textPassword"
                         android:hint="Nueva contraseña"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/bg_edtxt"
@@ -84,7 +84,7 @@
                         android:background="@drawable/bg_edtxt"
                         android:ems="10"
                         android:hint="Confirmar contraseña"
-                        android:inputType="textPersonName"
+                        android:inputType="textPassword"
                         android:padding="10dp"
                         android:textColor="@color/colorPrimary2" />
 
