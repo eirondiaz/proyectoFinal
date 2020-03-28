@@ -35,7 +35,7 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
     private Spinner spSexo, spEspecialidad, spARS, spClinica;
     private Button btnRegistrar, btnFecha;
     private EditText edNombre, edApellido, edTelefono, edEmail, edContraseña, edRepContra, edExequatur;
-    private String nombre, apellido , email, contraseña, repcontraseña, fecha, sexo, especialidad, ars, hospital , exequatur,  telefono ;
+    private String nombre, apellido , email, contraseña, repcontraseña, fecha, sexo, especialidad, ars, hospital, exequatur,  telefono ;
     private ProgressDialog progressDialog;
     private RequestQueue requestQueue;
     private  JsonObjectRequest jsonObjectRequest;
@@ -65,7 +65,7 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_medico);
 
-        requestQueue = Volley.newRequestQueue(getApplicationContext()); 
+        requestQueue = Volley.newRequestQueue(getApplicationContext());
 
         edNombre = findViewById(R.id.edNombre);
         edApellido = findViewById(R.id.edApellido);
@@ -162,11 +162,11 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                if(dayOfMonth < 10 ){
-                   btnFecha.setText(dayOfMonth + "-0" + (month + 1) + "-" + year);
+                   btnFecha.setText(year + "-0"+ dayOfMonth +"-" + (month + 1));
                }
 
                else{
-                   btnFecha.setText(dayOfMonth + "-" + (month + 1) + "-" + year);
+                   btnFecha.setText(year + "-"+ dayOfMonth +"-" + (month + 1) );
                }
             }
         } , dia, mes, ano);
@@ -178,6 +178,8 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onResponse(JSONObject response) {
                  progressDialog.hide();
+                 Toast.makeText(getApplicationContext(), "Registrado Exitosamente", Toast.LENGTH_SHORT).show();
+                 startActivity(new Intent(RegistroMedico.this, MedicoLogin.class));
     }
 
     @Override
@@ -207,41 +209,40 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
         email = edEmail.getText().toString();
         contraseña = edContraseña.getText().toString();
         repcontraseña = edRepContra.getText().toString();
-        fecha = btnFecha.getText().toString().equals("Fecha de nacimiento") ? "2020-28-3" : btnFecha.getText().toString() ;
+        fecha = btnFecha.getText().toString();
         exequatur = edExequatur.getText().toString();
 
 
         //   Toast.makeText(getApplicationContext(), nombre + " " + apellido +  " "   + fecha + " " + sexo, Toast.LENGTH_LONG).show();
 
-        if (nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty() || email.isEmpty() || contraseña.isEmpty() || fecha.isEmpty() || exequatur.isEmpty() || sexo.isEmpty() || hospital.isEmpty() || ars.isEmpty()) {
+        if (nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty() || email.isEmpty() || contraseña.isEmpty() || fecha.isEmpty() || exequatur.isEmpty() || sexo.isEmpty() || hospital.isEmpty() || ars.isEmpty() || fecha.equalsIgnoreCase("Fecha de nacimiento")) {
             Toast.makeText(getApplicationContext(), "Algunos campos estan vacios", Toast.LENGTH_SHORT).show();
 
-        } else {
+        }
 
-            if (contraseña.equals(repcontraseña)) {
+
+        else {
+
+            if(contraseña.length() < 6){
+                Toast.makeText(this, "La contraseña debe tener mas de 6 caracteres", Toast.LENGTH_SHORT).show();
+
+            }
+
+
+            else if(!contraseña.equals(repcontraseña)){
+                Toast.makeText(getApplicationContext(), "La contraseña no considen", Toast.LENGTH_SHORT).show();
+            }
+
+            else if (contraseña.equals(repcontraseña) && contraseña.length() < 6) {
                 progressDialog.show();
+                //  Toast.makeText(getApplicationContext(), nombre + " " + apellido + " " + telefono + "\n" + email  +" " + contraseña + " " + fecha + "\n" + exequatur + " " + hospital + " "  + ars, Toast.LENGTH_LONG).show();
 
-                String url = "https://proyectofinalprog2.000webhostapp.com/registroMedico.php?nombre=%22" + nombre + "%22&apellido=%22" + apellido + "%22" +
-                        "&telefono=" + telefono + "&correo=%22" + email + "%22&pass=%22" + contraseña + "%22&sexo=%22" + sexo + "%22&fecha=%27" + fecha + "%27" +
-                        "&exequatur=" + exequatur + "&especialida=%22" + especialidad + "%22&hospital=%22" + hospital + "%22&seguro=%22" + ars + "%22";
+                String url ="https://proyectofinalprog2.000webhostapp.com/registroMedico.php?nombre="+nombre+"&apellido="+apellido+"&telefono="+telefono+
+                        "&correo="+email+"&pass="+contraseña+"&sexo="+sexo+"&fecha="+fecha+"&exequatur="+exequatur+"&especialida="+especialidad +
+                        "&hospital="+hospital+"&seguro="+ars;
 
                 JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
                 requestQueue.add(request);
-
-
-            }
-            else {
-                AlertDialog.Builder alerta = new AlertDialog.Builder(this) ;
-                alerta.setTitle("Aviso!");
-                alerta.setMessage("Las contraseña no son iguales");
-                alerta.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                }) ;
-
-                alerta.create().show();
             }
 
         }
@@ -249,3 +250,4 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
 
         }
     }
+   // https://proyectofinalprog2.000webhostapp.com/registroMedico.php?nombre=%22gabriel%22&apellido=%22gil%22&telefono=823&correo=%22gabrieil@gmil.com%22&pass=%22gabriel%22&sexo=%22m%22&fecha=%272018-02-1%27&exequatur=11&especialida=%22ANATOM%C3%8DA%20PATOL%C3%93GICA%22&hospital=%22dariocontrera%22&seguro=%22full%22
