@@ -36,9 +36,11 @@ public class PreLogin extends AppCompatActivity implements View.OnClickListener 
         tipo = preferences.getString("tipo", "");
         if (tipo.equals("0")){
             startActivity(new Intent(PreLogin.this, MainActivity.class));
+            finish();
         }
         else if(tipo.equals("1")){
             startActivity(new Intent(PreLogin.this, DashboardMedico.class));
+            finish();
         }
     }
 

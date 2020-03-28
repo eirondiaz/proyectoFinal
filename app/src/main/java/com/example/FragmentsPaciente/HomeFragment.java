@@ -1,11 +1,14 @@
 package com.example.FragmentsPaciente;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,13 +17,18 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import com.example.AcercaDe;
+import com.example.AgendarCita;
+import com.example.MainActivity;
+import com.example.SeccionPaciente.InformacionPersonal;
 import com.example.proyectofinal.R;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements View.OnClickListener{
 
     private TextView tvNombre;
-
     private CardView cardViewTexto;
+    private LinearLayout lvAcercaDe, lyAgendar;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -40,6 +48,26 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        lvAcercaDe = view.findViewById(R.id.lvAcercaDe);
+        lvAcercaDe.setOnClickListener(this);
+
+        lyAgendar = view.findViewById(R.id.lyAgendar);
+        lyAgendar.setOnClickListener(this);
+
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()){
+
+            case R.id.lvAcercaDe:
+                startActivity(new Intent(getContext(), AcercaDe.class));
+                break;
+            case R.id.lyAgendar:
+                startActivity(new Intent(getContext(), AgendarCita.class));
+                break;
+        }
     }
 }

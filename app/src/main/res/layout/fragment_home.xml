@@ -54,6 +54,7 @@
                     android:layout_marginBottom="3dp">
 
                     <LinearLayout
+                        android:id="@+id/lyAgendar"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
@@ -156,6 +157,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cvAcercaDe"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_weight="1"
@@ -165,6 +167,7 @@
                     android:layout_marginBottom="3dp">
 
                     <LinearLayout
+                        android:id="@+id/lvAcercaDe"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"

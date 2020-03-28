@@ -8,8 +8,17 @@ public class Medico extends Usuario {
     private String especialidad;
     private String ars;
     private String hospital;
-
     ProgressDialog dialog;
+
+    public Medico(String Nombre, String Especialidad, String Hospital , int Foto) {
+        setNombre(Nombre);
+        setEspecialidad(Especialidad);
+        setHospital(Hospital);
+        setFoto(Foto);
+    }
+    public Medico(){
+
+    }
 
     public static void Registrar(){
 
