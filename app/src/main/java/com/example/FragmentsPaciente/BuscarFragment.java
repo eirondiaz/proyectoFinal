@@ -35,7 +35,7 @@ public class BuscarFragment extends Fragment implements Response.Listener<JSONOb
 
     RecyclerView recyclerViewMedicos;
     private ArrayList<Medico> medicos;
-    ProgressDialog dialog;
+    private ProgressDialog dialog;
 
     private RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
@@ -48,24 +48,25 @@ public class BuscarFragment extends Fragment implements Response.Listener<JSONOb
         //Solo de ejemplo
         //getListMedicos();
         recyclerViewMedicos = view.findViewById(R.id.RecylerListMedicos);
-        //RecylclerViewAdapter adapter = new RecylclerViewAdapter(getListMedicos());
-        //recyclerViewMedicos.setAdapter(adapter);
         recyclerViewMedicos.setLayoutManager(new LinearLayoutManager(getContext()));
 
         request = Volley.newRequestQueue(getContext());
 
+        dialog = new ProgressDialog(getContext());
+
         CargarWebService();
 
         medicos = new ArrayList<>();
+
         return view;
     }
 
     public void CargarWebService(){
 
-        ////dialog = new ProgressDialog(getContext());
-        //dialog.setMessage("Consultando lista de medicos...");
-        //dialog.setCanceledOnTouchOutside(false);
-        //dialog.show();
+        //dialog = new ProgressDialog(getContext());
+        dialog.setMessage("Consultando lista de medicos...");
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
 
         String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONConsultarListaMedicos.php";
 
@@ -87,20 +88,21 @@ public class BuscarFragment extends Fragment implements Response.Listener<JSONOb
                 JSONObject jsonObject = null;
                 jsonObject = json.getJSONObject(i);
 
-                medico.setNombre(jsonObject.getString("Nombres"));
-                medico.setEspecialidad("Neurologo");
+                medico.setNombre("Dr. " + jsonObject.getString("Nombres") + " " + jsonObject.getString("Apellidos"));
+                medico.setEspecialidad(jsonObject.getString("Especialidad"));
                 medico.setHospital("Hospital " + i);
+                medico.setIdMedico(jsonObject.getString("IdMedico"));
                 medico.setFoto(R.drawable.medico1);
 
                 medicos.add(medico);
             }
-            //dialog.dismiss();
+            dialog.dismiss();
             RecylclerViewAdapter adapter = new RecylclerViewAdapter(medicos);
             recyclerViewMedicos.setAdapter(adapter);
 
         } catch (JSONException e) {
             e.printStackTrace();
-            //dialog.dismiss();
+            dialog.dismiss();
             Toast.makeText(getContext(), "No se ha podido establecer conexion con el servidor", Toast.LENGTH_SHORT).show();
         }
     }
@@ -108,7 +110,7 @@ public class BuscarFragment extends Fragment implements Response.Listener<JSONOb
     @Override
     public void onErrorResponse(VolleyError error) {
         Toast.makeText(getContext(), "No existe medicos registrados", Toast.LENGTH_SHORT).show();
-        //dialog.dismiss();
+        dialog.dismiss();
     }
 
     //Ejemplo de como se llenara la lista de los medicos

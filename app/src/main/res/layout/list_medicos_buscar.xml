@@ -97,6 +97,16 @@
                     android:layout_height="wrap_content">
                 </TextView>
 
+                <TextView
+                    android:id="@+id/tvId"
+                    android:layout_width="match_parent"
+                    android:text=""
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="#fff"
+                    android:textSize="1sp"
+                    android:layout_height="wrap_content">
+                </TextView>
+
             </LinearLayout>
 
             <androidx.viewpager.widget.ViewPager

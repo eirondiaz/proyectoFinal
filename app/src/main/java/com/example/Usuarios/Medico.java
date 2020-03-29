@@ -8,6 +8,7 @@ public class Medico extends Usuario {
     private String especialidad;
     private String ars;
     private String hospital;
+    private String idMedico;
     ProgressDialog dialog;
 
     public Medico(String Nombre, String Especialidad, String Hospital , int Foto) {
@@ -18,6 +19,14 @@ public class Medico extends Usuario {
     }
     public Medico(){
 
+    }
+
+    public String getIdMedico() {
+        return idMedico;
+    }
+
+    public void setIdMedico(String idMedico) {
+        this.idMedico = idMedico;
     }
 
     public static void Registrar(){

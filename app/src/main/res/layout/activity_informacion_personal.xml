@@ -165,6 +165,7 @@
                     android:enabled="false"
                     android:inputType="phone"
                     android:text="809-765-3047"
+                    android:maxLength="13"
                     android:textColor="@color/colorPrimary2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.586"
