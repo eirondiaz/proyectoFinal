@@ -4,6 +4,179 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.AgendarCita">
+    android:background="#ffffff"
+    tools:context="com.example.PerfilMedico">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/bg_gradientepink"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/tvMainNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:fontFamily="@font/roboto_light"
+            android:text="Agendar cita"
+            android:textColor="#fff"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:background="#ffffff"
+        app:cardCornerRadius="36dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seleccione una fecha "
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary2">
+            </TextView>
+
+    <Button
+        android:id="@+id/btnFecha"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_edtxt"
+        android:text="fecha "
+        android:textColor="@color/colorPrimary2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre de la clinica"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary2">
+            </TextView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="22dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecciona la hora"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary2"
+        android:textSize="18sp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+</LinearLayout>
+            <Button
+                android:id="@+id/btnHora"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:text="Hora"
+                android:textColor="@color/colorPrimary2"
+                android:background="@drawable/bg_edtxt"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <Spinner
+                android:id="@+id/spSeguro"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:textColor="@color/colorPrimary2"
+                android:background="@drawable/bg_edtxt"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <Spinner
+                android:id="@+id/spTipoSeguro"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:textColor="@color/colorPrimary2"
+                android:background="@drawable/bg_edtxt"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <Spinner
+                android:id="@+id/spTipoCita"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:textColor="@color/colorPrimary2"
+                android:background="@drawable/bg_edtxt"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <EditText
+                android:id="@+id/edtObservaciones"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:hint="Observaciones"
+                android:background="@drawable/bg_edtxt"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimary2"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <Button
+                android:id="@+id/btnRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:fontFamily="@font/roboto_light"
+                android:text="Registrar"
+                android:textColor="#fff"
+                android:background="@drawable/bg_btn"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+    </LinearLayout>
+</ScrollView>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
