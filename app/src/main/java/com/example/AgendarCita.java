@@ -11,6 +11,7 @@ public class AgendarCita extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //para commit
         setContentView(R.layout.activity_agendar_cita);
     }
 }
