@@ -38,7 +38,7 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
     private String nombre, apellido , email, contraseña, repcontraseña, fecha, sexo, especialidad, ars, hospital, exequatur,  telefono ;
     private ProgressDialog progressDialog;
     private RequestQueue requestQueue;
-    private  JsonObjectRequest jsonObjectRequest;
+    private  JsonObjectRequest request;
 
     private String[] sexoList = new String[]{"Masculino", "Femenino"};
 
@@ -161,8 +161,16 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
         DatePickerDialog datepicker = new DatePickerDialog(RegistroMedico.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-               if(dayOfMonth < 10 ){
-                   btnFecha.setText(year + "-0"+ dayOfMonth +"-" + (month + 1));
+               if(dayOfMonth < 10 && month < 10 ){
+                   btnFecha.setText(year + "-0" +  (month + 1) +  "-0"+ dayOfMonth);
+               }
+
+              else if( month < 10 ){
+                    btnFecha.setText(year + "-0" +  (month + 1) + "-" + dayOfMonth);
+                }
+
+              else if (dayOfMonth < 10  ){
+                   btnFecha.setText(year + "-" +  (month + 1) + "-0" + dayOfMonth);
                }
 
                else{
@@ -233,21 +241,19 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
                 Toast.makeText(getApplicationContext(), "La contraseña no considen", Toast.LENGTH_SHORT).show();
             }
 
-            else if (contraseña.equals(repcontraseña) && contraseña.length() < 6) {
+            else {
                 progressDialog.show();
-                //  Toast.makeText(getApplicationContext(), nombre + " " + apellido + " " + telefono + "\n" + email  +" " + contraseña + " " + fecha + "\n" + exequatur + " " + hospital + " "  + ars, Toast.LENGTH_LONG).show();
 
-                String url ="https://proyectofinalprog2.000webhostapp.com/registroMedico.php?nombre="+nombre+"&apellido="+apellido+"&telefono="+telefono+
-                        "&correo="+email+"&pass="+contraseña+"&sexo="+sexo+"&fecha="+fecha+"&exequatur="+exequatur+"&especialida="+especialidad +
-                        "&hospital="+hospital+"&seguro="+ars;
-
-                JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
+                String url = "https://proyectofinalprog2.000webhostapp.com/registroMedico.php?nombre=%22"+nombre+"%22&&apellido=%22"+apellido+"%22&&telefono="+telefono+"&&correo=%22"+email+"%22&&pass=%22"+contraseña+"%22&&fecha=%27"+fecha+"%27&&sexo=%22"+sexo+"%22&&exequatur="+exequatur+"&&especialida=%22"+especialidad+"%22&&hospital=%22"+hospital+"%22&&seguro=%22"+ars+"%22";
+                url =  url.replace(" ", "%20");
+                request = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
                 requestQueue.add(request);
             }
 
         }
 
-
         }
+
     }
-   // https://proyectofinalprog2.000webhostapp.com/registroMedico.php?nombre=%22gabriel%22&apellido=%22gil%22&telefono=823&correo=%22gabrieil@gmil.com%22&pass=%22gabriel%22&sexo=%22m%22&fecha=%272018-02-1%27&exequatur=11&especialida=%22ANATOM%C3%8DA%20PATOL%C3%93GICA%22&hospital=%22dariocontrera%22&seguro=%22full%22
+
+   //https://proyectofinalprog2.000webhostapp.com/registroMedico.php?nombre=%22gabriel%22&&apellido=%22gil%22&&telefono=809203929301&&correo=%22gab@gmil.com%22&&pass=%22gabriel%22&&area=%22doctor%22&&fecha=%272018-02-1%27&&sexo=%22mascullino%22&&exequatur=32340&&especialida=%22no%20tiene%22&&hospital=%22ninguno%22&&seguro=%22no%22
