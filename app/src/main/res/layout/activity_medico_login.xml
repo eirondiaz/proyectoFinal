@@ -7,15 +7,6 @@
     tools:context="com.example.SeccionMedico.MedicoLogin">
 
 
-    <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -118,6 +109,5 @@
 
             </LinearLayout>
         </RelativeLayout>
-
-    </ScrollView>
+ 
 </androidx.constraintlayout.widget.ConstraintLayout>
