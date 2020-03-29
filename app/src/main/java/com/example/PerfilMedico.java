@@ -3,7 +3,10 @@ package com.example;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,10 +22,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class PerfilMedico extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener{
+public class PerfilMedico extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener, View.OnClickListener {
 
     private String id;
     private TextView tvEspecialidad, tvHospital, tvTelefono, tvCorreo, tvNombre;
+    private Button btnAgendarCita;
 
     private RequestQueue requestQueue;
     private  JSONObject jsonObject;
@@ -47,7 +51,8 @@ public class PerfilMedico extends AppCompatActivity implements Response.Listener
         tvTelefono = findViewById(R.id.tvTelefono);
         tvCorreo = findViewById(R.id.tvCorreo);
         tvNombre = findViewById(R.id.tvMainNombre);
-
+        btnAgendarCita = findViewById(R.id.btnAgendar);
+        btnAgendarCita.setOnClickListener(PerfilMedico.this);
         dialog = new ProgressDialog(this);
 
         CargarWebService();
@@ -86,5 +91,13 @@ public class PerfilMedico extends AppCompatActivity implements Response.Listener
     public void onErrorResponse(VolleyError error) {
         Toast.makeText(this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show();
         dialog.dismiss();
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.btnAgendar){
+            Intent i = new Intent(PerfilMedico.this, AgendarCita.class);
+            startActivity(i);
+        }
     }
 }
