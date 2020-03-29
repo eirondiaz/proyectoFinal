@@ -149,8 +149,10 @@ public class RegistroPaciente extends AppCompatActivity implements View.OnClickL
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 btnFecha.setText(year + "-" + (month + 1) + "-" + dayOfMonth);
             }
-        } , dia, mes, ano);
-        datepicker.getDatePicker().setMinDate(System.currentTimeMillis());
+        } , 2000, 12, 12);
+        //datepicker.getDatePicker().setMinDate(System.currentTimeMillis());
+        //c.set(1995, 01, 01);
+        //datepicker.getDatePicker().setMaxDate(System.currentTimeMillis());
         datepicker.show();
     }
 }
