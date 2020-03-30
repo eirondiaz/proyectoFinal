@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,7 +37,7 @@ public class BuscarFragment extends Fragment implements Response.Listener<JSONOb
     RecyclerView recyclerViewMedicos;
     private ArrayList<Medico> medicos;
     private ProgressDialog dialog;
-
+    private ArrayList<Medico> medicosCopia;
     private RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
 
@@ -44,6 +45,7 @@ public class BuscarFragment extends Fragment implements Response.Listener<JSONOb
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_buscar, container, false);
+
 
         //Solo de ejemplo
         //getListMedicos();
@@ -57,6 +59,23 @@ public class BuscarFragment extends Fragment implements Response.Listener<JSONOb
         CargarWebService();
 
         medicos = new ArrayList<>();
+        medicosCopia = new ArrayList<Medico>();
+
+        SearchView searchView = view.findViewById(R.id.svBuscarTodp);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                buscarMedico(newText);
+                return false;
+            }
+        });
+
 
         return view;
     }
@@ -127,5 +146,20 @@ public class BuscarFragment extends Fragment implements Response.Listener<JSONOb
         medicos.add(new Medico("Andres Guzman","Medico General","Hospital San Antonio",R.drawable.medico2));
         medicos.add(new Medico("Eiron Diaz","Medico General","Hospital San Antonio",R.drawable.medico2));
         return medicos;
+    }
+
+    public void buscarMedico(String frase){
+
+        medicosCopia.clear();
+        for (Medico medico: medicos){
+            String nombre = medico.getNombre();
+
+            if(nombre.contains(frase)){
+                medicosCopia.add(medico);
+            }
+        }
+
+        RecylclerViewAdapter adapter = new RecylclerViewAdapter(medicosCopia);
+        recyclerViewMedicos.setAdapter(adapter);
     }
 }
