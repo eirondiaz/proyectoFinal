@@ -1,4 +1,4 @@
-package com.example.SeccionPaciente;
+package com.example.SeccionMedico;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,20 +29,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class PerfilMedico extends AppCompatActivity implements View.OnClickListener, Response.Listener<JSONObject>, Response.ErrorListener{
+public class PerfilPaciente extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener{
 
     private String id;
-    private TextView tvEspecialidad, tvHospital, tvTelefono, tvCorreo, tvNombre;
-    private LinearLayout layoutLlamar;
-    private LinearLayout linearLayout;
+    private TextView tvFecha, tvTelefono, tvCorreo, tvNombre;
+    private LinearLayout lyCorreo, lyLlamar;
     private RequestQueue requestQueue;
-    private  JSONObject jsonObject;
+    private JSONObject jsonObject;
     private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perfil_medico);
+        setContentView(R.layout.activity_perfil_paciente);
 
         try{
             Bundle b = getIntent().getExtras();
@@ -53,35 +52,23 @@ public class PerfilMedico extends AppCompatActivity implements View.OnClickListe
 
         requestQueue = Volley.newRequestQueue(getApplication());
 
-        tvEspecialidad = findViewById(R.id.tvEspecialidad);
-        tvHospital = findViewById(R.id.tvHospital);
+        tvFecha = findViewById(R.id.tvFecha);
         tvTelefono = findViewById(R.id.tvTelefono);
         tvCorreo = findViewById(R.id.tvCorreo);
         tvNombre = findViewById(R.id.tvMainNombre);
-        linearLayout = findViewById(R.id.Lemail);
+        lyCorreo = findViewById(R.id.Lemail);
 
         dialog = new ProgressDialog(this);
 
         CargarWebService();
 
-        layoutLlamar = findViewById(R.id.layoutLlamar);
-        layoutLlamar.setOnClickListener(this);
-
-        linearLayout.setOnClickListener(new View.OnClickListener() {
+        lyLlamar = findViewById(R.id.layoutLlamar);
+        lyLlamar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mardarCorreo();
-            }
-        });
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.layoutLlamar:
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(PerfilPaciente.this);
                 builder.setTitle("Avertencia")
-                        .setMessage("Estás seguro que desea llamar a este medico?")
+                        .setMessage("Estás seguro que desea llamar a este paciente?")
                         .setPositiveButton("SI", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -96,7 +83,64 @@ public class PerfilMedico extends AppCompatActivity implements View.OnClickListe
                         });
                 AlertDialog alertDialog = builder.create();
                 alertDialog.show();
-                break;
+            }
+        });
+
+        lyCorreo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mardarCorreo();
+            }
+        });
+    }
+
+    private void CargarWebService(){
+        dialog.setMessage("Cargando perfil...");
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+
+        String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONCargarPerfilPaciente.php?id=" + id;
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
+        requestQueue.add(request);
+    }
+
+    @Override
+    public void onResponse(JSONObject response) {
+        JSONArray json = response.optJSONArray("paciente");
+
+        try {
+            jsonObject = json.getJSONObject(0);
+
+            tvFecha.setText(jsonObject.getString("Fecha_Nacimiento"));
+            tvTelefono.setText(jsonObject.getString("Telefono"));
+            tvCorreo.setText(jsonObject.getString("correo"));
+            tvNombre.setText(jsonObject.getString("Nombres") + " " + jsonObject.getString("Apellidos"));
+            dialog.dismiss();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            dialog.dismiss();
+        }
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        Toast.makeText(this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show();
+        dialog.dismiss();
+    }
+
+    private void mardarCorreo() {
+        String recojer = tvCorreo.getText().toString();
+        Intent email= new Intent(Intent.ACTION_SEND);
+        email.setData(Uri.parse("mailto:"));
+        email.setType("message/rfc822");
+        email.putExtra(Intent.EXTRA_EMAIL,new String[]{recojer});
+
+        try{
+            startActivity(Intent.createChooser(email,"Send Email"));
+
+        }catch (Exception e){
+
+            Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -118,56 +162,5 @@ public class PerfilMedico extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(getApplicationContext(), "Permiso denegado", Toast.LENGTH_LONG).show();
             }
         }
-    }
-
-    private void mardarCorreo() {
-        String recojer = tvCorreo.getText().toString();
-        Intent email= new Intent(Intent.ACTION_SEND);
-        email.setData(Uri.parse("mailto:"));
-        email.setType("message/rfc822");
-        email.putExtra(Intent.EXTRA_EMAIL,new String[]{recojer});
-
-        try{
-            startActivity(Intent.createChooser(email,"Send Email"));
-
-        }catch (Exception e){
-
-            Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void CargarWebService(){
-        dialog.setMessage("Cargando perfil...");
-        dialog.setCanceledOnTouchOutside(false);
-        dialog.show();
-
-        String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONCargarPerfilMedico.php?id=" + id;
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
-        requestQueue.add(request);
-    }
-
-    @Override
-    public void onResponse(JSONObject response) {
-        JSONArray json = response.optJSONArray("medico");
-
-        try {
-            jsonObject = json.getJSONObject(0);
-
-            tvEspecialidad.setText(jsonObject.getString("Especialidad"));
-            tvHospital.setText(jsonObject.getString("Hospital"));
-            tvTelefono.setText(jsonObject.getString("Telefono"));
-            tvCorreo.setText(jsonObject.getString("correo"));
-            tvNombre.setText(jsonObject.getString("Nombres") + " " + jsonObject.getString("Apellidos"));
-            dialog.dismiss();
-        } catch (JSONException e) {
-            e.printStackTrace();
-            dialog.dismiss();
-        }
-    }
-
-    @Override
-    public void onErrorResponse(VolleyError error) {
-        Toast.makeText(this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show();
-        dialog.dismiss();
     }
 }

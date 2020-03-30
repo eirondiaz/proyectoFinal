@@ -13,17 +13,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.SeccionMedico.CambContrasenaMed"></activity>
+        <activity android:name="com.example.SeccionMedico.PerfilPaciente"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"></activity>
+        <activity android:name="com.example.SeccionMedico.CambContrasenaMed"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name="com.example.SeccionPaciente.PerfilMedico"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
-        <activity android:name="com.example.AgendarCita" />
-        <activity android:name="com.example.AcercaDe" />
-        <activity android:name="com.example.SeccionMedico.InfoPersonalMedico" />
+        <activity android:name="com.example.AgendarCita"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name="com.example.AcercaDe"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name="com.example.SeccionMedico.InfoPersonalMedico"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
         <activity android:name="com.example.SeccionMedico.Ars" />
         <activity android:name="com.example.SeccionMedico.Especialidad" />
-        <activity android:name="com.example.SeccionMedico.RegistroMedico" />
+        <activity android:name="com.example.SeccionMedico.RegistroMedico"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name="com.example.SeccionMedico.DashboardMedico"
             android:screenOrientation="portrait"

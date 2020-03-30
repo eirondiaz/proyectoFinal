@@ -70,12 +70,10 @@ public class BuscarFragment extends Fragment implements Response.Listener<JSONOb
 
             @Override
             public boolean onQueryTextChange(String newText) {
-
                 buscarMedico(newText);
                 return false;
             }
         });
-
 
         return view;
     }
@@ -134,7 +132,7 @@ public class BuscarFragment extends Fragment implements Response.Listener<JSONOb
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        Toast.makeText(getContext(), "No existe medicos registrados", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "Ha ocurrido un error al consultar los medicos", Toast.LENGTH_SHORT).show();
         dialog.dismiss();
     }
 
@@ -153,6 +151,7 @@ public class BuscarFragment extends Fragment implements Response.Listener<JSONOb
         medicosCopia.clear();
         for (Medico medico: medicos){
             String nombre = medico.getNombre();
+            nombre = nombre.toLowerCase();
 
             if(nombre.contains(frase)){
                 medicosCopia.add(medico);

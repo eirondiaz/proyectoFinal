@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#fff"
     android:layout_height="match_parent">
 
@@ -29,22 +29,33 @@
                 android:textStyle="bold"
                 android:gravity="center"/>
 
-            <EditText
-                android:id="@+id/edBuscar"
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/svBuscarTodp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Buscar..."
-                android:textColorHint="#fff"
-                android:background="@drawable/bg_edtxtbuscar"
-                android:padding="8dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="7dp"
-                android:textColor="#fff"/>
+                android:layout_weight="1"
+                android:background="@drawable/bg_edtxtbuscar"
+                android:inputType="textPersonName"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                />
 
         </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RecylerListPacientes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </ScrollView>
 
     </LinearLayout>
 
