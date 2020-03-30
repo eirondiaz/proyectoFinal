@@ -1,4 +1,7 @@
-package com.example.SeccionPaciente;
+package com.example.SeccionMedico;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -11,9 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -25,7 +25,7 @@ import com.example.proyectofinal.R;
 
 import org.json.JSONObject;
 
-public class CambiarContrasena extends AppCompatActivity implements View.OnClickListener, Response.Listener<JSONObject>, Response.ErrorListener {
+public class CambContrasenaMed extends AppCompatActivity implements View.OnClickListener, Response.Listener<JSONObject>, Response.ErrorListener{
 
     private EditText edPassActual, edPassNew, edPassNewConfirm;
     private String correo, passActual, passNew, passNewConfirm, passActualReal;
@@ -38,7 +38,7 @@ public class CambiarContrasena extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cambiar_contrasena);
+        setContentView(R.layout.activity_camb_contrasena_med);
 
         edPassActual = findViewById(R.id.editText_pass_actual);
         edPassNew = findViewById(R.id.editText_pass_new);
@@ -57,7 +57,6 @@ public class CambiarContrasena extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-
         switch (v.getId()){
             case R.id.btn_cambiar_pass:
                 cargarServer();
@@ -72,7 +71,7 @@ public class CambiarContrasena extends AppCompatActivity implements View.OnClick
         passNewConfirm = edPassNewConfirm.getText().toString();
 
         if(passActual.isEmpty() || passNew.isEmpty() || passNewConfirm.isEmpty()){
-            alerta("Error!", "Debe llenar todos los campos");
+            alerta("Advertencia!", "Debe llenar todos los campos");
 
         }else{
             if (passNew.equals(passNewConfirm)){
@@ -98,16 +97,14 @@ public class CambiarContrasena extends AppCompatActivity implements View.OnClick
             }else{
                 alerta("Error!", "Las contraseña no coinciden");
             }
-
         }
-
     }
 
     @Override
     public void onResponse(JSONObject response) {
         dialog.dismiss();
         Toast.makeText(this,"La contraseña se ha actualizado correctamente", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, DashboardMedico.class);
         startActivity(intent);
     }
 

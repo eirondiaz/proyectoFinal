@@ -88,9 +88,15 @@ public class BuscarFragment extends Fragment implements Response.Listener<JSONOb
                 JSONObject jsonObject = null;
                 jsonObject = json.getJSONObject(i);
 
-                medico.setNombre("Dr. " + jsonObject.getString("Nombres") + " " + jsonObject.getString("Apellidos"));
+                String sexo = jsonObject.getString("Sexo");
+                if(sexo.equalsIgnoreCase("masculino")){
+                    medico.setNombre("Dr. " + jsonObject.getString("Nombres") + " " + jsonObject.getString("Apellidos"));
+                }
+                else{
+                    medico.setNombre("Dra. " + jsonObject.getString("Nombres") + " " + jsonObject.getString("Apellidos"));
+                }
                 medico.setEspecialidad(jsonObject.getString("Especialidad"));
-                medico.setHospital("Hospital " + i);
+                medico.setHospital(jsonObject.getString("Hospital"));
                 medico.setIdMedico(jsonObject.getString("IdMedico"));
                 medico.setFoto(R.drawable.medico1);
 

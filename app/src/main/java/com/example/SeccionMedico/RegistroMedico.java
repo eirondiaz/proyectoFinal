@@ -43,7 +43,7 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
     private String[] sexoList = new String[]{"Masculino", "Femenino"};
 
     private String[] especialidadList = new String[]
-            {"ANATOMÍA PATOLÓGICA","ANESTESIOLOGÍA", "ANGIOLOGÍA GENERAL y HEMODINAMIA" , "CARDIOLOGÍA" , "CARDIÓLOGO INFANTIL" , "CIRUGÍA GENERAL" ,
+            {"Especialidad", "ANATOMÍA PATOLÓGICA","ANESTESIOLOGÍA", "ANGIOLOGÍA GENERAL y HEMODINAMIA" , "CARDIOLOGÍA" , "CARDIÓLOGO INFANTIL" , "CIRUGÍA GENERAL" ,
                     "CIRUGÍA CARDIOVASCULAR" , "CIRUGÍA DE CABEZA Y CUELLO" , "CIRUGÍA DE TÓRAX (CIRUGÍA TORÁCICA)" , "CIRUGÍA INFANTIL (CIRUGÍA PEDIÁTRICA)" ,
                     "CIRUGÍA PLÁSTICA Y REPARADORA" , "CIRUGÍA VASCULAR PERIFÉRICA" , "CLÍNICA MÉDICA", "COLOPROCTOLOGÍA", "DERMATOLOGÍA", "DIAGNOSTICO POR IMÁGENES",
                     "ENDOCRINOLOGÍA", "ENDOCRINÓLOGO INFANTIL", "FARMACOLOGÍA CLÍNICA", "FISIATRÍA (MEDICINA FÍSICA Y REHABILITACIÓN)", "GASTROENTEROLOGÍA",
@@ -177,8 +177,8 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
                    btnFecha.setText(year + "-"+ dayOfMonth +"-" + (month + 1) );
                }
             }
-        } , dia, mes, ano);
-        datepicker.getDatePicker().setMinDate(System.currentTimeMillis());
+        } , 2000, 12, 12);
+        //datepicker.getDatePicker().setMinDate(System.currentTimeMillis());
         datepicker.show();
     }
 
@@ -209,7 +209,7 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
 
     public void cargarServer() {
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Registrando usuario...");
+        progressDialog.setMessage("Registrando medico...");
 
         nombre = edNombre.getText().toString();
         apellido = edApellido.getText().toString();
@@ -223,24 +223,18 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
 
         //   Toast.makeText(getApplicationContext(), nombre + " " + apellido +  " "   + fecha + " " + sexo, Toast.LENGTH_LONG).show();
 
-        if (nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty() || email.isEmpty() || contraseña.isEmpty() || fecha.isEmpty() || exequatur.isEmpty() || sexo.isEmpty() || hospital.isEmpty() || ars.isEmpty() || fecha.equalsIgnoreCase("Fecha de nacimiento")) {
+        if (nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty() || email.isEmpty() || contraseña.isEmpty() || fecha.isEmpty() || exequatur.isEmpty() || sexo.isEmpty() || hospital.equalsIgnoreCase("hospital") || especialidad.equalsIgnoreCase("especialidad") || ars.isEmpty() || fecha.equalsIgnoreCase("Fecha de nacimiento")) {
             Toast.makeText(getApplicationContext(), "Algunos campos estan vacios", Toast.LENGTH_SHORT).show();
 
         }
-
-
         else {
 
             if(contraseña.length() < 6){
                 Toast.makeText(this, "La contraseña debe tener mas de 6 caracteres", Toast.LENGTH_SHORT).show();
-
             }
-
-
             else if(!contraseña.equals(repcontraseña)){
                 Toast.makeText(getApplicationContext(), "La contraseña no considen", Toast.LENGTH_SHORT).show();
             }
-
             else {
                 progressDialog.show();
 
@@ -249,7 +243,6 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
                 request = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
                 requestQueue.add(request);
             }
-
         }
 
         }

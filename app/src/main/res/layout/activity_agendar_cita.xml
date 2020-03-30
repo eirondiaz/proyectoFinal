@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    tools:context="com.example.PerfilMedico">
+    tools:context="com.example.SeccionPaciente.PerfilMedico">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
 
         <TextView
             android:id="@+id/tvMainNombre"
@@ -43,140 +42,141 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp"
-    >
-        <LinearLayout
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:padding="10dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Seleccione una fecha "
-                android:layout_marginTop="20dp"
-                android:textSize="18sp"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary2">
-            </TextView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnFecha"
-        android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/bg_edtxt"
-        android:text="fecha "
-        android:textColor="@color/colorPrimary2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Seleccione una fecha "
+                        android:layout_marginTop="20dp"
+                        android:textSize="18sp"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary2">
+                    </TextView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nombre de la clinica"
-                android:layout_marginTop="20dp"
-                android:textSize="18sp"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary2">
-            </TextView>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_marginTop="22dp">
+                <Button
+                    android:id="@+id/btnFecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/bg_edtxt"
+                    android:text="fecha "
+                    android:textColor="@color/colorPrimary2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Selecciona la hora"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimary2"
-        android:textSize="18sp"
-        android:layout_marginTop="7dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre de la clinica"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18sp"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary2">
+                    </TextView>
 
-    </TextView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="22dp">
 
-</LinearLayout>
-            <Button
-                android:id="@+id/btnHora"
-                android:layout_width="match_parent"
-                android:layout_height="43dp"
-                android:text="Hora"
-                android:textColor="@color/colorPrimary2"
-                android:background="@drawable/bg_edtxt"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Selecciona la hora"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary2"
+                        android:textSize="18sp"
+                        android:layout_marginTop="7dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+                    </TextView>
 
-            <Spinner
-                android:id="@+id/spSeguro"
-                android:layout_width="match_parent"
-                android:layout_height="43dp"
-                android:textColor="@color/colorPrimary2"
-                android:background="@drawable/bg_edtxt"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"/>
+                </LinearLayout>
+                    <Button
+                        android:id="@+id/btnHora"
+                        android:layout_width="match_parent"
+                        android:layout_height="43dp"
+                        android:text="Hora"
+                        android:textColor="@color/colorPrimary2"
+                        android:background="@drawable/bg_edtxt"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"/>
 
-            <Spinner
-                android:id="@+id/spTipoSeguro"
-                android:layout_width="match_parent"
-                android:layout_height="43dp"
-                android:textColor="@color/colorPrimary2"
-                android:background="@drawable/bg_edtxt"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"/>
+                    <Spinner
+                        android:id="@+id/spSeguro"
+                        android:layout_width="match_parent"
+                        android:layout_height="43dp"
+                        android:textColor="@color/colorPrimary2"
+                        android:background="@drawable/bg_edtxt"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"/>
 
-            <Spinner
-                android:id="@+id/spTipoCita"
-                android:layout_width="match_parent"
-                android:layout_height="43dp"
-                android:textColor="@color/colorPrimary2"
-                android:background="@drawable/bg_edtxt"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"/>
+                    <Spinner
+                        android:id="@+id/spTipoSeguro"
+                        android:layout_width="match_parent"
+                        android:layout_height="43dp"
+                        android:textColor="@color/colorPrimary2"
+                        android:background="@drawable/bg_edtxt"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"/>
 
-            <EditText
-                android:id="@+id/edtObservaciones"
-                android:layout_width="match_parent"
-                android:layout_height="43dp"
-                android:ems="10"
-                android:inputType="textPassword"
-                android:hint="Observaciones"
-                android:background="@drawable/bg_edtxt"
-                android:padding="10dp"
-                android:textColor="@color/colorPrimary2"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"/>
+                    <Spinner
+                        android:id="@+id/spTipoCita"
+                        android:layout_width="match_parent"
+                        android:layout_height="43dp"
+                        android:textColor="@color/colorPrimary2"
+                        android:background="@drawable/bg_edtxt"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"/>
 
-            <Button
-                android:id="@+id/btnRegistrar"
-                android:layout_width="match_parent"
-                android:layout_height="43dp"
-                android:fontFamily="@font/roboto_light"
-                android:text="Registrar"
-                android:textColor="#fff"
-                android:background="@drawable/bg_btn"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"/>
+                    <EditText
+                        android:id="@+id/edtObservaciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="43dp"
+                        android:ems="10"
+                        android:inputType="textPassword"
+                        android:hint="Observaciones"
+                        android:background="@drawable/bg_edtxt"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary2"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"/>
 
-    </LinearLayout>
-</ScrollView>
+                    <Button
+                        android:id="@+id/btnRegistrar"
+                        android:layout_width="match_parent"
+                        android:layout_height="43dp"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="Registrar"
+                        android:textColor="#fff"
+                        android:background="@drawable/bg_btn"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"/>
+
+            </LinearLayout>
+        </ScrollView>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

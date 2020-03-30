@@ -8,12 +8,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.PerfilMedico;
+import com.example.SeccionPaciente.PerfilMedico;
 import com.example.Usuarios.Medico;
 import com.example.proyectofinal.R;
 import java.util.ArrayList;

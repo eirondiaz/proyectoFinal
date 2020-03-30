@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,7 +40,7 @@ public class MedicoLogin extends AppCompatActivity implements View.OnClickListen
     private  JSONObject jsonObject;
     private RequestQueue requestQueue;
     private String email ;
-    private String password ;
+    private String password, tipo;
     private ProgressDialog progressDialog;
 
     @Override
@@ -91,11 +93,33 @@ public class MedicoLogin extends AppCompatActivity implements View.OnClickListen
               medico.setIdUsuario(jsonObject .optInt("idUsuario"));
               medico.setEmail(jsonObject.optString("correo"));
               medico.setContraseña(jsonObject.optString("pass"));
+              medico.setNombre(jsonObject.optString("Nombres"));
+              medico.setApellido(jsonObject.optString("Apellidos"));
+              medico.setTelefono(jsonObject.optString("Telefono"));
+              medico.setSexo(jsonObject.optString("Sexo"));
+              medico.setIdMedico(jsonObject.getString("IdMedico"));
+              tipo = jsonObject.getString("tipo");
+              medico.setExequatur(jsonObject.getString("Exequatur"));
+              medico.setEspecialidad(jsonObject.getString("Especialidad"));
+              medico.setArs(jsonObject.getString("seguro"));
+              medico.setHospital(jsonObject.getString("Hospital"));
 
           //  Toast.makeText(this, medico.getEmail() + " " + medico.getContraseña(), Toast.LENGTH_SHORT ).show();
              progressDialog.hide();
 
             if(medico.getEmail().equals(email) && medico.getContraseña().equals(password)){
+                SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("email", email);
+                editor.putString("nombre", medico.getNombre());
+                editor.putString("apellido", medico.getApellido());
+                editor.putString("telefono", medico.getTelefono());
+                editor.putString("sexo", medico.getSexo());
+                editor.putString("tipo", tipo);
+                editor.putString("especialidad", medico.getEspecialidad());
+                editor.putString("pass", password);
+                editor.putString("idmedico", medico.getIdMedico());
+                editor.commit();
                 medicoHome();
               }  else {
                   AlertDialog.Builder dialog = new AlertDialog.Builder(this);

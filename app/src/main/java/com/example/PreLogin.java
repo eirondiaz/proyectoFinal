@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.SeccionMedico.DashboardMedico;
 import com.example.SeccionMedico.MedicoLogin;

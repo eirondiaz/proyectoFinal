@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.proyectofinal">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -11,22 +13,53 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.PerfilMedico"></activity>
+        <activity android:name="com.example.SeccionMedico.CambContrasenaMed"></activity>
+        <activity
+            android:name="com.example.SeccionPaciente.PerfilMedico"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity android:name="com.example.AgendarCita" />
         <activity android:name="com.example.AcercaDe" />
         <activity android:name="com.example.SeccionMedico.InfoPersonalMedico" />
         <activity android:name="com.example.SeccionMedico.Ars" />
         <activity android:name="com.example.SeccionMedico.Especialidad" />
         <activity android:name="com.example.SeccionMedico.RegistroMedico" />
-        <activity android:name="com.example.SeccionMedico.DashboardMedico" />
-        <activity android:name="com.example.SeccionMedico.MedicoLogin" />
-        <activity android:name="com.example.SeccionPaciente.CambiarContrasena" />
-        <activity android:name="com.example.SeccionPaciente.InformacionPersonal" />
-        <activity android:name="com.example.SeccionPaciente.HistorialCitas" />
-        <activity android:name="com.example.SeccionPaciente.RegistroPaciente" />
-        <activity android:name="com.example.SeccionPaciente.PacienteLogin" />
-        <activity android:name="com.example.MainActivity" />
-        <activity android:name="com.example.PreLogin">
+        <activity
+            android:name="com.example.SeccionMedico.DashboardMedico"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.example.SeccionMedico.MedicoLogin"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.example.SeccionPaciente.CambiarContrasena"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.example.SeccionPaciente.InformacionPersonal"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.example.SeccionPaciente.HistorialCitas"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.example.SeccionPaciente.RegistroPaciente"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.example.SeccionPaciente.PacienteLogin"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.example.MainActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.example.PreLogin"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

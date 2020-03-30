@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.PerfilMedico">
+    tools:context="com.example.SeccionPaciente.PerfilMedico">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,7 +65,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:layout_marginTop="10dp">
 
                             <ImageView
                                 android:layout_width="40dp"
@@ -85,7 +86,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Especialidad"
-                                    android:textSize="23sp" />
+                                    android:textSize="20sp" />
 
                                 <TextView
                                     android:id="@+id/tvEspecialidad"
@@ -123,7 +124,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Hospital"
-                                    android:textSize="23sp" />
+                                    android:textSize="20sp" />
 
                                 <TextView
                                     android:id="@+id/tvHospital"
@@ -153,6 +154,7 @@
                             </ImageView>
 
                             <LinearLayout
+                                android:id="@+id/lyTelefono"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical">
@@ -161,7 +163,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Telefono"
-                                    android:textSize="23sp" />
+                                    android:textSize="20sp" />
 
                                 <TextView
                                     android:id="@+id/tvTelefono"
@@ -199,7 +201,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Email"
-                                    android:textSize="23sp" />
+                                    android:textSize="20sp" />
 
                                 <TextView
                                     android:id="@+id/tvCorreo"

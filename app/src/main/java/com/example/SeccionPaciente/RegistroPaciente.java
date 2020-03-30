@@ -72,7 +72,7 @@ public class RegistroPaciente extends AppCompatActivity implements View.OnClickL
     public void CargarWebService(){
 
         dialog = new ProgressDialog(this);
-        dialog.setMessage("Registrando");
+        dialog.setMessage("Registrando...");
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
 
