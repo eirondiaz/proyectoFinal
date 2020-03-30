@@ -23,6 +23,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.PerfilMedico;
 import com.example.Usuarios.Medico;
 import com.example.proyectofinal.R;
 
@@ -136,7 +137,10 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
 
             }
         });
+
+
     }
+
 
     @Override
     public void onClick(View v) {

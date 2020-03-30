@@ -3,10 +3,13 @@ package com.example;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +31,7 @@ public class PerfilMedico extends AppCompatActivity implements Response.Listener
     private TextView tvEspecialidad, tvHospital, tvTelefono, tvCorreo, tvNombre;
     private Button btnAgendarCita;
 
+   private LinearLayout linearLayout;
     private RequestQueue requestQueue;
     private  JSONObject jsonObject;
     private ProgressDialog dialog;
@@ -51,11 +55,39 @@ public class PerfilMedico extends AppCompatActivity implements Response.Listener
         tvTelefono = findViewById(R.id.tvTelefono);
         tvCorreo = findViewById(R.id.tvCorreo);
         tvNombre = findViewById(R.id.tvMainNombre);
+        linearLayout = findViewById(R.id.Lemail);
         btnAgendarCita = findViewById(R.id.btnAgendar);
         btnAgendarCita.setOnClickListener(PerfilMedico.this);
         dialog = new ProgressDialog(this);
 
         CargarWebService();
+
+linearLayout.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+       mardarCorreo();
+
+    }
+});
+    }
+
+   private void mardarCorreo() {
+       String recojer = tvCorreo.getText().toString();
+        Intent email= new Intent(Intent.ACTION_SEND);
+        email.setData(Uri.parse("mailto:"));
+       email.setType("message/rfc822");
+       email.putExtra(Intent.EXTRA_EMAIL,new String[]{recojer});
+
+
+
+        try{
+            startActivity(Intent.createChooser(email,"Send Email"));
+
+        }catch (Exception e){
+
+           Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     public void CargarWebService(){
@@ -67,6 +99,8 @@ public class PerfilMedico extends AppCompatActivity implements Response.Listener
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         requestQueue.add(request);
     }
+
+
 
     @Override
     public void onResponse(JSONObject response) {
@@ -100,4 +134,8 @@ public class PerfilMedico extends AppCompatActivity implements Response.Listener
             startActivity(i);
         }
     }
+
 }
+
+
+

@@ -191,8 +191,10 @@
                             </ImageView>
 
                             <LinearLayout
+                                android:id="@+id/Lemail"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+
                                 android:orientation="vertical">
 
                                 <TextView
