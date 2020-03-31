@@ -230,7 +230,7 @@
                         android:layout_marginRight="8dp"/>
 
                     <Button
-                        android:id="@+id/btnRegistrar"
+                        android:id="@+id/btnSubirImagen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Registrar"

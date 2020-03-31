@@ -23,7 +23,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.Usuarios.Medico;
 import com.example.proyectofinal.R;
 
 import org.json.JSONObject;
@@ -78,7 +77,7 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
         btnFecha = findViewById(R.id.fecha);
         btnFecha.setOnClickListener(this);
 
-        btnRegistrar = findViewById(R.id.btnRegistrar);
+        btnRegistrar = findViewById(R.id.btnSubirImagen);
         btnRegistrar.setOnClickListener(this);
 
         spSexo = findViewById(R.id.spSexo);
@@ -142,7 +141,7 @@ public class RegistroMedico extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()){
 
-            case R.id.btnRegistrar:
+            case R.id.btnSubirImagen:
                 cargarServer() ;
                 break;
             case R.id.fecha:

@@ -9,11 +9,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.SeccionMedico.DashboardMedico;
 import com.example.SeccionMedico.MedicoLogin;
+import com.example.SeccionPaciente.ImagenPaciente;
 import com.example.SeccionPaciente.PacienteLogin;
 import com.example.proyectofinal.R;
 
@@ -26,6 +28,7 @@ public class PreLogin extends AppCompatActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pre_login);
+
 
         lyPaciente = findViewById(R.id.lyPaciente);
         lyPaciente.setOnClickListener(this);
@@ -55,6 +58,7 @@ public class PreLogin extends AppCompatActivity implements View.OnClickListener 
             case R.id.lyMedico:
                 startActivity(new Intent(PreLogin.this, MedicoLogin.class));
                 break;
+
         }
     }
 }
