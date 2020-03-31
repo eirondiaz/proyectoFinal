@@ -1,4 +1,4 @@
-package com.example;
+package com.example.SeccionMedico;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,13 +30,13 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PerfilCitas extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener{
+public class PerfilCitaAceptada extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener{
 
-    private String id;
-    private TextView tvMedico, tvHospital, tvFecha, tvHora, tvObservacion, tvStatus;
+    private String idCita;
+    private TextView tvPaciente, tvTelefono, tvFecha, tvHora, tvObservacion, tvStatus;
     private ProgressDialog dialog;
     private Button btnCancelar;
-    private String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONCancelarCita.php";
+    private String urlCancelar = "https://proyectofinalprog2.000webhostapp.com/wsJSONCancelarCita.php";
 
     private RequestQueue request;
     private JSONObject jsonObject;
@@ -45,15 +45,15 @@ public class PerfilCitas extends AppCompatActivity implements Response.Listener<
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perfil_citas);
+        setContentView(R.layout.activity_perfil_cita_aceptada);
 
         try{
             Bundle b = getIntent().getExtras();
-            id = b.getString("id");
+            idCita = b.getString("id");
         }catch (Exception e){ }
 
-        tvMedico = findViewById(R.id.tvMedico);
-        tvHospital = findViewById(R.id.tvHospital);
+        tvPaciente = findViewById(R.id.tvPaciente);
+        tvTelefono = findViewById(R.id.tvTelefono);
         tvFecha = findViewById(R.id.tvFecha);
         tvHora = findViewById(R.id.tvHora);
         tvStatus = findViewById(R.id.tvStatus);
@@ -67,13 +67,13 @@ public class PerfilCitas extends AppCompatActivity implements Response.Listener<
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder dialog = new AlertDialog.Builder(PerfilCitas.this);
+                AlertDialog.Builder dialog = new AlertDialog.Builder(PerfilCitaAceptada.this);
                 dialog.setTitle("Advertencia")
                         .setMessage("Deseas cancelar esta cita?")
                         .setPositiveButton("SI", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                CancelarCita(url);
+                                CancelarCita(urlCancelar);
                             }
                         })
                         .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -93,14 +93,13 @@ public class PerfilCitas extends AppCompatActivity implements Response.Listener<
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
 
-        String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONCargarCita.php?id=" + id;
+        String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONCargarCitaMed.php?id=" + idCita;
         url = url.replace(" ", "%20");
 
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         request.add(jsonObjectRequest);
     }
 
-    @Override
     public void onResponse(JSONObject response) {
         JSONArray json = response.optJSONArray("cita");
 
@@ -108,17 +107,9 @@ public class PerfilCitas extends AppCompatActivity implements Response.Listener<
             jsonObject = json.getJSONObject(0);
 
             tvFecha.setText(jsonObject.getString("Fecha"));
-            tvMedico.setText(jsonObject.getString("Nombres") + " " + jsonObject.getString("Apellidos"));
-            tvHospital.setText(jsonObject.getString("Hospital"));
-            if (jsonObject.getString("Status").equalsIgnoreCase("aceptada")){
-                tvStatus.setTextColor(Color.parseColor("#35B100"));
-                tvStatus.setText(jsonObject.getString("Status"));
-            }
-            else{
-                tvStatus.setTextColor(Color.parseColor("#8C3800"));
-                tvStatus.setText(jsonObject.getString("Status"));
-            }
-            //tvStatus.setText(jsonObject.getString("Status"));
+            tvPaciente.setText(jsonObject.getString("Nombres") + " " + jsonObject.getString("Apellidos"));
+            tvTelefono.setText(jsonObject.getString("Telefono"));
+            tvStatus.setText(jsonObject.getString("Status"));
             tvHora.setText(jsonObject.getString("Hora"));
             tvObservacion.setText(jsonObject.getString("Observaciones"));
             dialog.dismiss();
@@ -143,9 +134,9 @@ public class PerfilCitas extends AppCompatActivity implements Response.Listener<
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(PerfilCitas.this, "Cita cancelada correctamente", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PerfilCitaAceptada.this, "Cita cancelada correctamente", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
-                startActivity(new Intent(PerfilCitas.this, MainActivity.class));
+                startActivity(new Intent(PerfilCitaAceptada.this, DashboardMedico.class));
                 finish();
                 /*if(!response.isEmpty()){
                     Toast.makeText(PerfilCitas.this, "Cita cancelada correctamente", Toast.LENGTH_SHORT).show();
@@ -154,14 +145,14 @@ public class PerfilCitas extends AppCompatActivity implements Response.Listener<
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(PerfilCitas.this, "Ha ocurrido un error al cancelar la cita", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PerfilCitaAceptada.this, "Ha ocurrido un error al cancelar la cita", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
         }){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> map = new HashMap<String, String>();
-                map.put("id", id);
+                map.put("id", idCita);
                 return map;
             }
         };

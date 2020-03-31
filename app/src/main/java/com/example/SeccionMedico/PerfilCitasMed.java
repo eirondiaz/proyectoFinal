@@ -36,8 +36,9 @@ public class PerfilCitasMed extends AppCompatActivity implements Response.Listen
     private String id;
     private TextView tvPaciente, tvTelefono, tvFecha, tvHora, tvObservacion, tvStatus;
     private ProgressDialog dialog;
-    private Button btnAceptar;
+    private Button btnAceptar, btnCancelar;
     private String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONAceptarCita.php";
+    private String urlCancelar = "https://proyectofinalprog2.000webhostapp.com/wsJSONCancelarCita.php";
 
     private RequestQueue request;
     private JSONObject jsonObject;
@@ -75,6 +76,29 @@ public class PerfilCitasMed extends AppCompatActivity implements Response.Listen
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 AceptarCita(url);
+                            }
+                        })
+                        .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        });
+                dialog.show();
+            }
+        });
+
+        btnCancelar = findViewById(R.id.btnCancelar);
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(PerfilCitasMed.this);
+                dialog.setTitle("Advertencia")
+                        .setMessage("Deseas cancelar esta cita?")
+                        .setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                CancelarCita(urlCancelar);
                             }
                         })
                         .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -128,10 +152,16 @@ public class PerfilCitasMed extends AppCompatActivity implements Response.Listen
     }
 
     private void AceptarCita(String url){
+        final ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setMessage("Aceptando cita...");
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(PerfilCitasMed.this, "Cita aceptada correctamente", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
                 startActivity(new Intent(PerfilCitasMed.this, CitasAceptadas.class));
                 finish();
                 /*if(!response.isEmpty()){
@@ -142,6 +172,43 @@ public class PerfilCitasMed extends AppCompatActivity implements Response.Listen
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(PerfilCitasMed.this, "Ha ocurrido un error al aceptar la cita", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> map = new HashMap<String, String>();
+                map.put("id", id);
+                return map;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
+
+    private void CancelarCita(String url){
+        final ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setMessage("Cancelando cita...");
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(PerfilCitasMed.this, "Cita cancelada correctamente", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+                startActivity(new Intent(PerfilCitasMed.this, DashboardMedico.class));
+                finish();
+                /*if(!response.isEmpty()){
+                    Toast.makeText(PerfilCitas.this, "Cita cancelada correctamente", Toast.LENGTH_SHORT).show();
+                }*/
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(PerfilCitasMed.this, "Ha ocurrido un error al cancelar la cita", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
             }
         }){
             @Override
