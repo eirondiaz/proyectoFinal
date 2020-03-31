@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.SeccionMedico.PerfilCitaAceptada;
 import com.example.SeccionMedico.PerfilCitasMed;
 import com.example.Usuarios.Cita;
 import com.example.proyectofinal.R;
@@ -61,17 +62,17 @@ public class RecylclerViewAdapterCitaAceptada extends RecyclerView.Adapter<Recyl
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             
-            /*itemView.setOnClickListener(new View.OnClickListener() {
+            itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(v.getContext(), PerfilCitasMed.class);
+                    Intent i = new Intent(v.getContext(), PerfilCitaAceptada.class);
                     Bundle b = new Bundle();
                     b.putString("id", tvId.getText().toString());
                     i.putExtras(b);
                     v.getContext().startActivity(i);
                     //Toast.makeText(v.getContext(), tvId.getText().toString(), Toast.LENGTH_SHORT).show();
                 }
-            });*/
+            });
             
             imageViewMedico = itemView.findViewById(R.id.ImageMedico);
             tvNombre = itemView.findViewById(R.id.tvNombre);

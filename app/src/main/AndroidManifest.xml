@@ -13,21 +13,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.SeccionMedico.CitasAceptadas"
+        <activity android:name="com.example.SeccionMedico.PerfilCitaAceptada"></activity>
+        <activity
+            android:name="com.example.SeccionMedico.CitasAceptadas"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"></activity>
-        <activity android:name="com.example.SeccionMedico.PerfilCitasMed"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.example.SeccionMedico.PerfilCitasMed"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name="com.example.SeccionMedico.CitasAgendadasMed"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.example.SeccionMedico.CitasAgendadasMed"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name="com.example.PerfilCitas"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.example.PerfilCitas"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name="com.example.SeccionPaciente.CitasAgendadas"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.example.SeccionPaciente.CitasAgendadas"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name="com.example.SeccionMedico.PerfilPaciente"
             android:screenOrientation="portrait"

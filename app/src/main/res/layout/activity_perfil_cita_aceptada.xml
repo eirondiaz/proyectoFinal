@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.SeccionMedico.PerfilCitasMed">
+    android:background="#fff"
+    tools:context="com.example.SeccionMedico.PerfilCitaAceptada">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -135,7 +136,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text=""
-                            android:textColor="@color/colorPrimary2"/>
+                            android:textColor="#35B100"/>
 
                     </LinearLayout>
 
@@ -149,22 +150,13 @@
                 </androidx.cardview.widget.CardView>
 
                 <Button
-                    android:id="@+id/btnAceptar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="aceptar cita"
-                    android:textColor="#fff"
-                    android:background="@drawable/bg_btn"/>
-
-                <Button
                     android:id="@+id/btnCancelar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:text="Cancelar cita"
+                    android:layout_marginTop="20dp"
+                    android:text="cancelar cita"
                     android:textColor="#fff"
-                    android:background="@drawable/bg_btn"
+                    android:background="@drawable/bg_btneditar"
                     android:backgroundTint="#ff0000"/>
 
             </LinearLayout>
