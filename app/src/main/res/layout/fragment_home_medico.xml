@@ -89,6 +89,7 @@
                     android:layout_marginBottom="3dp">
 
                     <LinearLayout
+                        android:id="@+id/lyAcepCitas"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
@@ -102,7 +103,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="texto2"
+                            android:text="Citas por aceptar"
                             android:textAllCaps="true"
                             android:textSize="15sp"
                             android:fontFamily="@font/roboto_light"

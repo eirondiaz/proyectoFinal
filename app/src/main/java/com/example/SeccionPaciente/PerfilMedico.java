@@ -13,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.AgendarCita;
 import com.example.proyectofinal.R;
 
 import org.json.JSONArray;
@@ -31,12 +33,13 @@ import org.json.JSONObject;
 
 public class PerfilMedico extends AppCompatActivity implements View.OnClickListener, Response.Listener<JSONObject>, Response.ErrorListener{
 
-    private String id;
+    private String id, medico, especialidad, hospital;
     private TextView tvEspecialidad, tvHospital, tvTelefono, tvCorreo, tvNombre;
-    private LinearLayout layoutLlamar;
-    private LinearLayout linearLayout;
+    private LinearLayout layoutLlamar, linearLayout;
+    private Button btnAgendar;
+
     private RequestQueue requestQueue;
-    private  JSONObject jsonObject;
+    private JSONObject jsonObject;
     private ProgressDialog dialog;
 
     @Override
@@ -47,9 +50,7 @@ public class PerfilMedico extends AppCompatActivity implements View.OnClickListe
         try{
             Bundle b = getIntent().getExtras();
             id = b.getString("id");
-        }catch (Exception e){
-
-        }
+        }catch (Exception e){ }
 
         requestQueue = Volley.newRequestQueue(getApplication());
 
@@ -63,6 +64,9 @@ public class PerfilMedico extends AppCompatActivity implements View.OnClickListe
         dialog = new ProgressDialog(this);
 
         CargarWebService();
+
+        btnAgendar = findViewById(R.id.btnAgendar);
+        btnAgendar.setOnClickListener(this);
 
         layoutLlamar = findViewById(R.id.layoutLlamar);
         layoutLlamar.setOnClickListener(this);
@@ -96,6 +100,16 @@ public class PerfilMedico extends AppCompatActivity implements View.OnClickListe
                         });
                 AlertDialog alertDialog = builder.create();
                 alertDialog.show();
+                break;
+            case R.id.btnAgendar:
+                Intent i = new Intent(PerfilMedico.this, AgendarCita.class);
+                Bundle b = new Bundle();
+                b.putString("id", id);
+                b.putString("medico", medico);
+                b.putString("especialidad", especialidad);
+                b.putString("hospital", hospital);
+                i.putExtras(b);
+                startActivity(i);
                 break;
         }
     }
@@ -154,10 +168,13 @@ public class PerfilMedico extends AppCompatActivity implements View.OnClickListe
             jsonObject = json.getJSONObject(0);
 
             tvEspecialidad.setText(jsonObject.getString("Especialidad"));
+            especialidad = jsonObject.getString("Especialidad");
             tvHospital.setText(jsonObject.getString("Hospital"));
+            hospital = jsonObject.getString("Hospital");
             tvTelefono.setText(jsonObject.getString("Telefono"));
             tvCorreo.setText(jsonObject.getString("correo"));
             tvNombre.setText(jsonObject.getString("Nombres") + " " + jsonObject.getString("Apellidos"));
+            medico = jsonObject.getString("Nombres");
             dialog.dismiss();
         } catch (JSONException e) {
             e.printStackTrace();

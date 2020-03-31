@@ -89,6 +89,7 @@
                     android:layout_marginBottom="3dp">
 
                     <LinearLayout
+                        android:id="@+id/lyAgendadas"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"

@@ -51,13 +51,13 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Seleccione una fecha "
-                        android:layout_marginTop="20dp"
                         android:textSize="18sp"
                         android:textAlignment="center"
                         android:textColor="@color/colorPrimary2">
@@ -67,9 +67,7 @@
                     android:id="@+id/btnFecha"
                     android:layout_width="match_parent"
                     android:layout_height="43dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="13dp"
-                    android:layout_marginRight="20dp"
                     android:background="@drawable/bg_edtxt"
                     android:text="fecha "
                     android:textColor="@color/colorPrimary2"
@@ -115,29 +113,31 @@
                         android:text="Hora"
                         android:textColor="@color/colorPrimary2"
                         android:background="@drawable/bg_edtxt"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"/>
+                        android:layout_marginTop="20dp"/>
 
                     <Spinner
-                        android:id="@+id/spSeguro"
+                        android:id="@+id/spMedico"
                         android:layout_width="match_parent"
                         android:layout_height="43dp"
                         android:textColor="@color/colorPrimary2"
                         android:background="@drawable/bg_edtxt"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"/>
+                        android:layout_marginTop="20dp"/>
 
                     <Spinner
-                        android:id="@+id/spTipoSeguro"
+                        android:id="@+id/spHospital"
                         android:layout_width="match_parent"
                         android:layout_height="43dp"
                         android:textColor="@color/colorPrimary2"
                         android:background="@drawable/bg_edtxt"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"/>
+                        android:layout_marginTop="20dp"/>
+
+                    <Spinner
+                        android:id="@+id/spEspecialidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="43dp"
+                        android:textColor="@color/colorPrimary2"
+                        android:background="@drawable/bg_edtxt"
+                        android:layout_marginTop="20dp"/>
 
                     <Spinner
                         android:id="@+id/spTipoCita"
@@ -145,35 +145,29 @@
                         android:layout_height="43dp"
                         android:textColor="@color/colorPrimary2"
                         android:background="@drawable/bg_edtxt"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"/>
+                        android:layout_marginTop="20dp"/>
 
                     <EditText
                         android:id="@+id/edtObservaciones"
                         android:layout_width="match_parent"
                         android:layout_height="43dp"
                         android:ems="10"
-                        android:inputType="textPassword"
+                        android:inputType="textPersonName"
                         android:hint="Observaciones"
                         android:background="@drawable/bg_edtxt"
                         android:padding="10dp"
                         android:textColor="@color/colorPrimary2"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"/>
+                        android:layout_marginTop="20dp"/>
 
                     <Button
-                        android:id="@+id/btnRegistrar"
+                        android:id="@+id/btnAgendar"
                         android:layout_width="match_parent"
                         android:layout_height="43dp"
                         android:fontFamily="@font/roboto_light"
-                        android:text="Registrar"
+                        android:text="Agendar"
                         android:textColor="#fff"
                         android:background="@drawable/bg_btn"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"/>
+                        android:layout_marginTop="20dp"/>
 
             </LinearLayout>
         </ScrollView>

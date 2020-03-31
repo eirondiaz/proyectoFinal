@@ -20,6 +20,7 @@ import androidx.fragment.app.Fragment;
 import com.example.AcercaDe;
 import com.example.AgendarCita;
 import com.example.MainActivity;
+import com.example.SeccionPaciente.CitasAgendadas;
 import com.example.SeccionPaciente.InformacionPersonal;
 import com.example.proyectofinal.R;
 
@@ -27,7 +28,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
     private TextView tvNombre;
     private CardView cardViewTexto;
-    private LinearLayout lvAcercaDe, lyAgendar;
+    private LinearLayout lvAcercaDe, lyAgendar, lyAgendadas;
 
     @Nullable
     @Override
@@ -54,6 +55,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         lyAgendar = view.findViewById(R.id.lyAgendar);
         lyAgendar.setOnClickListener(this);
 
+        lyAgendadas = view.findViewById(R.id.lyAgendadas);
+        lyAgendadas.setOnClickListener(this);
+
         return view;
     }
 
@@ -67,6 +71,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 break;
             case R.id.lyAgendar:
                 startActivity(new Intent(getContext(), AgendarCita.class));
+                break;
+            case R.id.lyAgendadas:
+                startActivity(new Intent(getContext(), CitasAgendadas.class));
                 break;
         }
     }

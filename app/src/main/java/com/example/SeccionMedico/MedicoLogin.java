@@ -117,6 +117,7 @@ public class MedicoLogin extends AppCompatActivity implements View.OnClickListen
                 editor.putString("sexo", medico.getSexo());
                 editor.putString("tipo", tipo);
                 editor.putString("especialidad", medico.getEspecialidad());
+                editor.putString("hospital", medico.getHospital());
                 editor.putString("pass", password);
                 editor.putString("idmedico", medico.getIdMedico());
                 editor.commit();

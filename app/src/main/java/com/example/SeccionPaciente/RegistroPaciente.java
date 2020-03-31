@@ -124,7 +124,6 @@ public class RegistroPaciente extends AppCompatActivity implements View.OnClickL
     public void onErrorResponse(VolleyError error) {
         Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show();
         dialog.dismiss();
-
     }
 
     @Override
