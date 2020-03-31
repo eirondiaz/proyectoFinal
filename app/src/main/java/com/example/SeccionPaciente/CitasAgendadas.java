@@ -95,7 +95,7 @@ public class CitasAgendadas extends AppCompatActivity implements Response.Listen
                 else{
                     cita.setNombrePac("Dra. " + jsonObject.getString("Nombres") + " " + jsonObject.getString("Apellidos"));
                 }
-                cita.setStatus("Activada");
+                cita.setStatus(jsonObject.getString("Status"));
                 cita.setHospitalMed(jsonObject.getString("Hospital"));
                 cita.setFecha(jsonObject.getString("Fecha") + ", " + jsonObject.getString("Hora"));
                 cita.setIdCita(jsonObject.getString("IdCita"));

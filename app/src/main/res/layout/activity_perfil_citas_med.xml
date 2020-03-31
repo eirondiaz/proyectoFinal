@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.PerfilCitas">
+    tools:context="com.example.SeccionMedico.PerfilCitasMed">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,11 +57,11 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Medico:"
+                            android:text="Paciente:"
                             android:textSize="18sp"/>
 
                         <TextView
-                            android:id="@+id/tvMedico"
+                            android:id="@+id/tvPaciente"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text=""
@@ -71,11 +71,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="14dp"
-                            android:text="Hospital:"
+                            android:text="Telefono:"
                             android:textSize="18sp"/>
 
                         <TextView
-                            android:id="@+id/tvHospital"
+                            android:id="@+id/tvTelefono"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text=""
@@ -149,14 +149,13 @@
                 </androidx.cardview.widget.CardView>
 
                 <Button
-                    android:id="@+id/btnCancelar"
+                    android:id="@+id/btnAceptar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="cancelar cita"
+                    android:text="aceptar cita"
                     android:textColor="#fff"
-                    android:background="@drawable/bg_btneditar"
-                    android:backgroundTint="#ff0000"/>
+                    android:background="@drawable/bg_btn"/>
 
             </LinearLayout>
 

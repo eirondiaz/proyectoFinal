@@ -16,8 +16,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.SeccionCitaMedica.RecylclerViewAdapterCita;
 import com.example.SeccionCitaMedica.RecylclerViewAdapterCitaAcept;
+import com.example.SeccionCitaMedica.RecylclerViewAdapterCitaAceptada;
 import com.example.Usuarios.Cita;
 import com.example.proyectofinal.R;
 
@@ -27,9 +27,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class CitasAgendadasMed extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener{
+public class CitasAceptadas extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener{
 
-    private RecyclerView recyclerViewCitasAcept;
+    private RecyclerView recyclerViewCitasAceptada;
     private ArrayList<Cita> citas;
     private ProgressDialog dialog;
     private ArrayList<Cita> citasCopia;
@@ -40,14 +40,14 @@ public class CitasAgendadasMed extends AppCompatActivity implements Response.Lis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_citas_agendadas_med);
+        setContentView(R.layout.activity_citas_aceptadas);
 
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         idMedico = preferences.getString("idmedico", "");
         hospital = preferences.getString("hospital", "");
 
-        recyclerViewCitasAcept = findViewById(R.id.RecylerListCitas);
-        recyclerViewCitasAcept.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewCitasAceptada = findViewById(R.id.RecylerListCitas);
+        recyclerViewCitasAceptada.setLayoutManager(new LinearLayoutManager(this));
 
         request = Volley.newRequestQueue(this);
 
@@ -66,7 +66,7 @@ public class CitasAgendadasMed extends AppCompatActivity implements Response.Lis
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
 
-        String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONConsultarCitasByIdMedico.php?id=" + idMedico;
+        String url = "https://proyectofinalprog2.000webhostapp.com/wsJSONConsultarCitasAceptByIdMedico.php?id=" + idMedico;
 
         url = url.replace(" ", "%20");
 
@@ -96,8 +96,8 @@ public class CitasAgendadasMed extends AppCompatActivity implements Response.Lis
                 citas.add(cita);
             }
             dialog.dismiss();
-            RecylclerViewAdapterCitaAcept adapter = new RecylclerViewAdapterCitaAcept(citas);
-            recyclerViewCitasAcept.setAdapter(adapter);
+            RecylclerViewAdapterCitaAceptada adapter = new RecylclerViewAdapterCitaAceptada(citas);
+            recyclerViewCitasAceptada.setAdapter(adapter);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -108,7 +108,7 @@ public class CitasAgendadasMed extends AppCompatActivity implements Response.Lis
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        Toast.makeText(this, "No tienes citas agendadas", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "No tienes citas aceptadas", Toast.LENGTH_SHORT).show();
         dialog.dismiss();
     }
 }

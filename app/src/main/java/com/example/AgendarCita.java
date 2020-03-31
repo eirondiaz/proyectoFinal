@@ -145,7 +145,8 @@ public class AgendarCita extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        Toast.makeText(this, "Ha ocurrido un error al agendar la cita", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Ha ocurrido un error al agendar la cita", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show();
         dialog.dismiss();
     }
 

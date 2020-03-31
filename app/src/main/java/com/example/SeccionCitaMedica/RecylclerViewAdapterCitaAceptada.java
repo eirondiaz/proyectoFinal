@@ -1,7 +1,6 @@
 package com.example.SeccionCitaMedica;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,27 +12,25 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.PerfilCitas;
-import com.example.SeccionMedico.PerfilPaciente;
+import com.example.SeccionMedico.PerfilCitasMed;
 import com.example.Usuarios.Cita;
-import com.example.Usuarios.Paciente;
 import com.example.proyectofinal.R;
 
 import java.util.ArrayList;
 
-public class RecylclerViewAdapterCita extends RecyclerView.Adapter<RecylclerViewAdapterCita.ViewHolder>{
+public class RecylclerViewAdapterCitaAceptada extends RecyclerView.Adapter<RecylclerViewAdapterCitaAceptada.ViewHolder>{
     private static final String TAG = "RecylclerViewAdapter";
     ArrayList<Cita>listCita;
     String id;
 
-    public RecylclerViewAdapterCita(ArrayList<Cita> listCita) {
+    public RecylclerViewAdapterCitaAceptada(ArrayList<Cita> listCita) {
         this.listCita = listCita;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_citas_buscar,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_citasaceptada_buscar,parent,false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
@@ -42,14 +39,7 @@ public class RecylclerViewAdapterCita extends RecyclerView.Adapter<RecylclerView
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.imageViewMedico.setImageResource(listCita.get(position).getFoto());
         holder.tvNombre.setText(listCita.get(position).getNombrePac());
-        if (listCita.get(position).getStatus().equalsIgnoreCase("aceptada")){
-            holder.tvStatus.setTextColor(Color.parseColor("#35B100"));
-            holder.tvStatus.setText(listCita.get(position).getStatus());
-        }
-        else{
-            holder.tvStatus.setTextColor(Color.parseColor("#8C3800"));
-            holder.tvStatus.setText(listCita.get(position).getStatus());
-        }
+        holder.tvStatus.setText(listCita.get(position).getStatus());
         holder.tvHospital.setText(listCita.get(position).getHospitalMed());
         holder.tvFecha.setText(listCita.get(position).getFecha());
         holder.tvId.setText(listCita.get(position).getIdCita());
@@ -71,17 +61,17 @@ public class RecylclerViewAdapterCita extends RecyclerView.Adapter<RecylclerView
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             
-            itemView.setOnClickListener(new View.OnClickListener() {
+            /*itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(v.getContext(), PerfilCitas.class);
+                    Intent i = new Intent(v.getContext(), PerfilCitasMed.class);
                     Bundle b = new Bundle();
                     b.putString("id", tvId.getText().toString());
                     i.putExtras(b);
                     v.getContext().startActivity(i);
                     //Toast.makeText(v.getContext(), tvId.getText().toString(), Toast.LENGTH_SHORT).show();
                 }
-            });
+            });*/
             
             imageViewMedico = itemView.findViewById(R.id.ImageMedico);
             tvNombre = itemView.findViewById(R.id.tvNombre);

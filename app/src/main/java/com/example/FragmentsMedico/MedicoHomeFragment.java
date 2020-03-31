@@ -16,6 +16,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.AcercaDe;
+import com.example.SeccionMedico.CitasAceptadas;
 import com.example.SeccionMedico.CitasAgendadasMed;
 import com.example.proyectofinal.R;
 
@@ -26,7 +27,7 @@ public class MedicoHomeFragment extends Fragment implements View.OnClickListener
 
     private TextView tvNombre;
     private CardView cardViewTexto;
-    private LinearLayout lyAcercaDe, lyAcepCitas;
+    private LinearLayout lyAcercaDe, lyAcepCitas, lyAceptadas;
     String sexo;
     //private  int idUsuario ;
 
@@ -46,6 +47,9 @@ public class MedicoHomeFragment extends Fragment implements View.OnClickListener
 
         lyAcepCitas = view.findViewById(R.id.lyAcepCitas);
         lyAcepCitas.setOnClickListener(this);
+
+        lyAceptadas = view.findViewById(R.id.lyAceptadas);
+        lyAceptadas.setOnClickListener(this);
 
         SharedPreferences preferences = this.getActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
         sexo = preferences.getString("sexo", "");
@@ -68,6 +72,9 @@ public class MedicoHomeFragment extends Fragment implements View.OnClickListener
                 break;
             case R.id.lyAcepCitas:
                 startActivity(new Intent(getContext(), CitasAgendadasMed.class));
+                break;
+            case R.id.lyAceptadas:
+                startActivity(new Intent(getContext(), CitasAceptadas.class));
                 break;
         }
     }
