@@ -13,8 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.SeccionPaciente.AgendarCita2"></activity>
-        <activity android:name="com.example.SeccionMedico.PerfilCitaAceptada" />
+        <activity android:name="com.example.SeccionPaciente.AgendarCita2"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"></activity>
+        <activity android:name="com.example.SeccionMedico.PerfilCitaAceptada"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name="com.example.SeccionMedico.CitasAceptadas"
             android:screenOrientation="portrait"
