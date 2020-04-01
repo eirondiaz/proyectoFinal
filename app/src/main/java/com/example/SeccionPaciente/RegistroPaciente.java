@@ -20,7 +20,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.Usuarios.Paciente;
 import com.example.proyectofinal.R;
 
 import org.json.JSONObject;
@@ -65,7 +64,7 @@ public class RegistroPaciente extends AppCompatActivity implements View.OnClickL
             }
         });
 
-        btnRegistrar = findViewById(R.id.btnRegistrar);
+        btnRegistrar = findViewById(R.id.btnSubirImagen);
         btnRegistrar.setOnClickListener(this);
     }
 
@@ -130,7 +129,7 @@ public class RegistroPaciente extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()){
 
-            case R.id.btnRegistrar:
+            case R.id.btnSubirImagen:
                 CargarWebService();
                 break;
         }
