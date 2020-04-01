@@ -1,4 +1,4 @@
-package com.example;
+package com.example.SeccionPaciente;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
@@ -24,9 +24,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.SeccionPaciente.CitasAgendadas;
-import com.example.SeccionPaciente.PacienteLogin;
-import com.example.SeccionPaciente.RegistroPaciente;
 import com.example.proyectofinal.R;
 
 import org.json.JSONObject;
@@ -145,8 +142,8 @@ public class AgendarCita extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        //Toast.makeText(this, "Ha ocurrido un error al agendar la cita", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Ha ocurrido un error al agendar la cita", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show();
         dialog.dismiss();
     }
 

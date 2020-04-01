@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,10 +17,9 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.AcercaDe;
-import com.example.AgendarCita;
-import com.example.MainActivity;
+import com.example.SeccionPaciente.AgendarCita;
+import com.example.SeccionPaciente.AgendarCita2;
 import com.example.SeccionPaciente.CitasAgendadas;
-import com.example.SeccionPaciente.InformacionPersonal;
 import com.example.proyectofinal.R;
 
 public class HomeFragment extends Fragment implements View.OnClickListener{
@@ -70,7 +68,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 startActivity(new Intent(getContext(), AcercaDe.class));
                 break;
             case R.id.lyAgendar:
-                startActivity(new Intent(getContext(), AgendarCita.class));
+                startActivity(new Intent(getContext(), AgendarCita2.class));
                 break;
             case R.id.lyAgendadas:
                 startActivity(new Intent(getContext(), CitasAgendadas.class));
