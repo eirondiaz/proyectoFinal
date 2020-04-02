@@ -6,4 +6,106 @@
     android:layout_height="match_parent"
     tools:context="com.example.AcercaDe">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/bg_gradientepink"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvMainNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_light"
+            android:text="Acerca De"
+            android:textColor="#fff"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:background="#ffffff"
+        app:cardCornerRadius="36dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MEDISERVAS"
+                    android:layout_marginTop="25dp"
+                    android:textSize="24sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary2">
+                </TextView>
+
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/health_checkup_127px" />
+
+
+                <TextView
+                    android:layout_width="366dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:text="Es una aplicación de agendas médicas que busca facilitar la gestión de agendar y confirmar las citas de forma automática, formal y respetuosa hacia el paciente."
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary2"
+                    android:textSize="18sp"></TextView>
+
+                <TextView
+                    android:layout_width="366dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:text="Mediservas es una aplicación móvil que te permite agendar una consulta en solo segundos. Evita largas filas y tiempos de espera en clinicas y hospitales, solo ingresas a Mediservas, regístrate y busca tu cita por especialidad, centro de salud o locación. Es así de fácil, solo debes elegir la hora que más te convenga y listo."
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary2"
+                    android:textSize="18sp"></TextView>
+
+                <TextView
+                    android:layout_width="366dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:text="Mediservas es una aplicación que viene a revolucionar el sector médico, una herramienta que permite resolver el problema de las largas filas y tiempos de espera de los pacientes a la hora de ir a hospitales y clínicas."
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary2"
+                    android:textSize="18sp"></TextView>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
