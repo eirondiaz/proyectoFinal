@@ -94,15 +94,15 @@ public class MedicoBuscarFragment extends Fragment implements Response.Listener<
 
     @Override
     public void onResponse(JSONObject response) {
-        //UsuarioFactory factory = new UsuarioFactory();
+        UsuarioFactory factory = new UsuarioFactory();
         Paciente paciente;
 
         JSONArray json = response.optJSONArray("paciente");
 
         try {
             for (int i = 0; i < json.length(); i++){
-                //paciente = factory.getUsuario("paciente");
-                paciente = new Paciente();
+                //Patron
+                paciente = (Paciente) factory.getUsuario("paciente");
                 JSONObject jsonObject = null;
                 jsonObject = json.getJSONObject(i);
 
